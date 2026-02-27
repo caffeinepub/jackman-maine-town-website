@@ -1,4 +1,4 @@
-import { Snowflake, Fish, Mountain, TreePine, Waves, Tent, Bike, Camera } from 'lucide-react';
+import { Snowflake, Fish, Mountain, TreePine, Waves, Tent, Camera, Crosshair } from 'lucide-react';
 
 const activities = [
   {
@@ -48,6 +48,14 @@ const activities = [
     description:
       'Jackman is one of the best places in the Northeast to observe moose in their natural habitat. The area is also home to black bears, white-tailed deer, bald eagles, loons, and countless other species. Fall foliage season transforms the landscape into a breathtaking tapestry of color.',
     highlights: ['Moose viewing hotspots', 'Fall foliage photography', 'Bald eagle sightings', 'Guided wildlife tours'],
+  },
+  {
+    icon: Crosshair,
+    title: 'Hunting',
+    subtitle: 'Prime Big Game Country',
+    description:
+      'The vast forests and wetlands surrounding Jackman make it one of Maine\'s premier hunting destinations. The region supports healthy populations of white-tailed deer, moose, black bear, and upland birds. With millions of acres of North Maine Woods accessible by permit, hunters enjoy some of the most productive and unspoiled habitat in the entire Northeast.',
+    highlights: ['Moose, deer & black bear seasons', 'Upland bird & waterfowl hunting', 'Guided hunting trips available', 'Maine hunting licenses required'],
   },
 ];
 

@@ -1,38 +1,37 @@
 {
   "kind": "build_request",
-  "title": "Add emergency services phone numbers (911) to Town Services section",
+  "title": "Add Hunting to Recreation & Outdoors section",
   "projectName": "Jackman Maine",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-9",
-      "text": "Update the Town Services page (frontend/src/pages/ServicesPage.tsx) to display dedicated emergency services listings for the Sheriff, Fire Department, and Ambulance, each showing their service name and a phone number that links to 'tel:911'. Ensure the 911 emergency banner and these individual service entries are visually prominent and consistent with the existing Northern Maine theme.",
+      "id": "REQ-10",
+      "text": "Add 'Hunting' as a recreation activity entry in the Recreation & Outdoors page (frontend/src/pages/RecreationPage.tsx), following the same card/section format used by existing activities (snowmobiling, fishing, hiking, etc.). Include a short description of hunting opportunities in the Jackman, Maine area and relevant bullet-point highlights (e.g., deer, moose, bear, upland bird seasons).",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-8"
         ],
         "quotes": [
-          "Emergency services like the sheriff fire department and ambulance phone numbers to 9 1 1."
+          "Add for one of the recreation titles, add hunting."
         ]
       },
       "acceptanceCriteria": [
-        "The Town Services page lists three emergency service entries: Sheriff, Fire Department, and Ambulance.",
-        "Each emergency service entry displays a clickable phone link using 'tel:911' that dials 911 on mobile devices.",
-        "The emergency services section is visually distinct (e.g., highlighted or grouped under an 'Emergency Services' heading) and easy to locate on the page.",
-        "The existing 911 emergency banner on the Services page is preserved or enhanced, not removed.",
-        "Styling remains consistent with the deep forest green, slate gray, and warm wood-toned theme."
+        "A 'Hunting' section/card appears on the Recreation & Outdoors page alongside existing activities.",
+        "The hunting entry includes a title, descriptive text, and bullet-point highlights consistent with other activity entries.",
+        "The visual style matches the existing Northern Maine theme (deep forest greens, slate grays, amber accents).",
+        "No existing recreation activities are removed or altered."
       ]
     }
   ],
   "constraints": [
-    "Do not modify backend data models or add backend logic — all emergency contact information is static and frontend-only.",
-    "Do not edit any files listed in frontend.immutablePaths."
+    "Do not modify backend data models or storage — this is a frontend-only content addition.",
+    "Match the existing card/section layout pattern used for other recreation activities in RecreationPage.tsx."
   ],
   "nonGoals": [
-    "Adding any other new services or sections beyond emergency services.",
-    "Storing emergency contact numbers in the backend.",
-    "Changing the overall layout or navigation structure of the site."
+    "Adding hunting license or regulation information.",
+    "Adding a hunting-specific image or banner.",
+    "Modifying any other page outside of RecreationPage.tsx."
   ],
   "imageRequirements": {
     "required": [],

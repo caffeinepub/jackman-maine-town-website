@@ -9,6 +9,6 @@
   "frontend/src/pages/ServicesPage.tsx": "Town Services page with a prominent Emergency Services section (Sheriff, Fire Department, Ambulance) featuring clickable `tel:911` call buttons, followed by the existing municipal services grid and the emergency banner at the top.",
   "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations: getEvents, addEvent, deleteEvent, getTownAddress, getTownPhoneNumber, submitMessage, isCallerAdmin, and getCallerUserProfile.",
   "frontend/src/pages/EventsPage.tsx": "Events & News page that fetches and displays backend events sorted by date, with an inline add-event form and delete controls visible only to authenticated admins.",
-  "frontend/src/pages/RecreationPage.tsx": "Recreation page featuring the hero recreation image and six detailed activity cards (snowmobiling, fishing, hiking, paddling, camping, wildlife) with a plan-your-visit CTA.",
+  "frontend/src/pages/RecreationPage.tsx": "Recreation page featuring the hero recreation image and seven detailed activity cards (snowmobiling, fishing, hiking, paddling, camping, wildlife, and hunting) with a plan-your-visit CTA. The new Hunting card follows the same layout, icon, and highlight-bullet pattern as all existing activity cards.",
   "frontend/src/pages/ContactPage.tsx": "Contact page showing backend-fetched town address and phone, office hours, and a contact form that submits to the backend with a success confirmation state."
 }

@@ -1,7 +1,7 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-27T22:32:47.506Z",
+  "generatedAt": "2026-02-27T23:06:15.131Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
@@ -11,25 +11,24 @@
     "implemented": 1,
     "items": [
       {
-        "id": "REQ-9",
-        "summary": "Update the Town Services page (frontend/src/pages/ServicesPage.tsx) to display dedicated emergency services listings for the Sheriff, Fire Department, and Ambulance, each showing their service name and a phone number that links to 'tel:911'. Ensure the 911 emergency banner and these individual service entries are visually prominent and consistent with the existing Northern Maine theme.",
+        "id": "REQ-10",
+        "summary": "Add 'Hunting' as a recreation activity entry in the Recreation & Outdoors page (frontend/src/pages/RecreationPage.tsx), following the same card/section format used by existing activities (snowmobiling, fishing, hiking, etc.). Include a short description of hunting opportunities in the Jackman, Maine area and relevant bullet-point highlights (e.g., deer, moose, bear, upland bird seasons).",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/pages/ServicesPage.tsx"
+          "frontend/src/pages/RecreationPage.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/pages/ServicesPage.tsx"
+          "frontend/src/pages/RecreationPage.tsx"
         ]
       }
     ]
   },
   "changedFiles": [
     "build-request.json",
-    "build-template/README.md",
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/pages/ServicesPage.tsx",
+    "frontend/src/pages/RecreationPage.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 5,
+  "projectStateVersion": 7,
   "summary": "A town website for Jackman, Maine (ZIP: 04945). The site will serve as an informational hub for the town.",
   "architectural_notes": [
     "Town: Jackman, Maine | ZIP: 04945"
@@ -79,6 +79,14 @@
         "REQ-9"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-add-hunting-as-a-recreation-activity-entry-in-the-recreation-outdoors-page-frontend-src-pages-recreationpage-tsx-following-the-same-card-section-format-used-by-existing-activities-snowmobiling-fishing-hiking-etc-include-a-short-description-of-hunting-opportunities-in-the-jackman-maine-area-and-relevant-bullet-point-highlights-e-g-deer-moose-bear-upland-bird-seasons",
+      "title": "Add 'Hunting' as a recreation activity entry in the Recreation & Outdoors page (frontend/src/pages/RecreationPage.tsx), following the same card/section format used by existing activities (snowmobiling, fishing, hiking, etc.). Include a short description of hunting opportunities in the Jackman, Maine area and relevant bullet-point highlights (e.g., deer, moose, bear, upland bird seasons).",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -91,6 +99,12 @@
     {
       "id": "AR-2",
       "summary": "Add emergency services contact info (Sheriff, Fire Department, Ambulance) with phone numbers linking to 911 in the Town Services section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Add 'Hunting' to the Recreation & Outdoors section titles/activities",
       "reqIds": [],
       "status": "pending"
     }
