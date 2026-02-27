@@ -1,0 +1,14 @@
+{
+  "frontend/src/index.css": "Global styles with a northern Maine wilderness OKLCH color system, Google Fonts imports for Playfair Display (serif headings) and Source Sans 3 (body), and base typography rules.",
+  "frontend/tailwind.config.js": "Extended Tailwind config with custom `forest`, `slate`, and `amber` color palettes, custom `serif`/`sans` font families, and additional shadow tokens for the wilderness theme.",
+  "frontend/src/App.tsx": "Root app component that sets up TanStack Router with a Layout wrapper (Navigation + Footer + Outlet) and routes for all six pages: Home, About, Services, Events, Recreation, and Contact.",
+  "frontend/src/components/Navigation.tsx": "Sticky top navigation bar with the Jackman logo, ZIP code top bar, desktop nav links with active state, mobile hamburger menu, and an Admin Login/Logout button using Internet Identity.",
+  "frontend/src/components/Footer.tsx": "Site footer with brand tagline, quick links, contact info, copyright year, and caffeine.ai attribution with UTM tracking.",
+  "frontend/src/pages/HomePage.tsx": "Homepage with a full-bleed hero image, welcome copy, quick-link cards to major sections, and a four-column highlights grid showcasing Jackman's outdoor offerings.",
+  "frontend/src/pages/AboutPage.tsx": "About page with town logo, quick-facts sidebar, and rich descriptive sections covering Jackman's history, geography, and community spirit.",
+  "frontend/src/pages/ServicesPage.tsx": "Town Services page displaying six service categories (Town Office, Emergency, Public Works, Solid Waste, Library, Motor Vehicles) in a card grid with an emergency banner.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations: getEvents, addEvent, deleteEvent, getTownAddress, getTownPhoneNumber, submitMessage, isCallerAdmin, and getCallerUserProfile.",
+  "frontend/src/pages/EventsPage.tsx": "Events & News page that fetches and displays backend events sorted by date, with an inline add-event form and delete controls visible only to authenticated admins.",
+  "frontend/src/pages/RecreationPage.tsx": "Recreation page featuring the hero recreation image and six detailed activity cards (snowmobiling, fishing, hiking, paddling, camping, wildlife) with a plan-your-visit CTA.",
+  "frontend/src/pages/ContactPage.tsx": "Contact page showing backend-fetched town address and phone, office hours, and a contact form that submits to the backend with a success confirmation state."
+}

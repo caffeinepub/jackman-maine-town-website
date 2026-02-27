@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "A town website for Jackman, Maine (ZIP: 04945). The site will serve as an informational hub for the town.",
+  "architectural_notes": [
+    "Town: Jackman, Maine | ZIP: 04945"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Panoramic wilderness landscape of a small northern Maine town with a calm lake, dense pine forest, and mountains in the background under a dramatic sky (jackman-hero.dim_1440x600.png)\n- Collage-style outdoor recreation illustration showing snowmobiling, fishing, and hiking in a forested Maine setting with autumn and winter tones (jackman-recreation.dim_800x400.png)\n- Simple pine tree and moose silhouette logo mark for the town of Jackman Maine (jackman-logo.dim_256x256.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-homepage-for-the-town-of-jackman-maine-zip-04945-that-prominently-displays-the-town-name-a-welcome-message-and-key-navigation-to-all-sections-of-the-site",
+      "title": "Create a homepage for the Town of Jackman, Maine (ZIP 04945) that prominently displays the town name, a welcome message, and key navigation to all sections of the site.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-about-jackman-section-that-includes-a-brief-description-of-the-town-its-location-in-somerset-county-maine-and-highlights-such-as-its-proximity-to-the-canadian-border-and-outdoor-recreation",
+      "title": "Create an 'About Jackman' section that includes a brief description of the town, its location in Somerset County, Maine, and highlights such as its proximity to the Canadian border and outdoor recreation.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-town-services-section-listing-common-municipal-services-such-as-town-office-contact-information-public-works-and-emergency-services",
+      "title": "Create a 'Town Services' section listing common municipal services such as Town Office contact information, public works, and emergency services.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-local-events-news-section-that-allows-town-administrators-to-post-announcements-and-upcoming-events-store-events-and-announcements-in-the-backend-with-title-date-and-description-fields",
+      "title": "Create a 'Local Events & News' section that allows town administrators to post announcements and upcoming events. Store events and announcements in the backend with title, date, and description fields.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-recreation-outdoors-section-highlighting-jackman-s-outdoor-activities-such-as-snowmobiling-fishing-hiking-and-the-moose-river-with-descriptive-text-and-relevant-imagery",
+      "title": "Create a 'Recreation & Outdoors' section highlighting Jackman's outdoor activities such as snowmobiling, fishing, hiking, and the Moose River, with descriptive text and relevant imagery.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-contact-us-section-displaying-the-town-of-jackman-s-address-zip-04945-a-placeholder-phone-number-and-a-simple-contact-form-with-name-email-and-message-fields-store-submitted-messages-in-the-backend",
+      "title": "Create a 'Contact Us' section displaying the Town of Jackman's address (ZIP 04945), a placeholder phone number, and a simple contact form with name, email, and message fields. Store submitted messages in the backend.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-cohesive-visual-theme-inspired-by-the-rugged-forested-wilderness-of-northern-maine-using-deep-forest-greens-warm-slate-grays-and-natural-wood-toned-accents-typography-should-feel-sturdy-and-welcoming-layout-should-be-clean-and-easy-to-navigate-for-all-ages",
+      "title": "Apply a cohesive visual theme inspired by the rugged, forested wilderness of northern Maine — using deep forest greens, warm slate grays, and natural wood-toned accents. Typography should feel sturdy and welcoming. Layout should be clean and easy to navigate for all ages.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-the-generated-images-hero-landscape-outdoor-recreation-scene-as-static-assets-served-from-frontend-public-assets-generated-and-display-them-in-the-appropriate-site-sections",
+      "title": "Render the generated images (hero landscape, outdoor recreation scene) as static assets served from frontend/public/assets/generated and display them in the appropriate site sections.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Town website for Jackman, Maine (ZIP 04945)",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Jackman Maine Town Website",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

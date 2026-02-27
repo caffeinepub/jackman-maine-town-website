@@ -1,0 +1,170 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-homepage-for-the-town-of-jackman-maine-zip-04945-that-prominently-displays-the-town-name-a-welcome-message-and-key-navigation-to-all-sections-of-the-site",
+      "featureTitle": "Create a homepage for the Town of Jackman, Maine (ZIP 04945) that prominently displays the town name, a welcome message, and key navigation to all sections of the site.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Navigation.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-an-about-jackman-section-that-includes-a-brief-description-of-the-town-its-location-in-somerset-county-maine-and-highlights-such-as-its-proximity-to-the-canadian-border-and-outdoor-recreation",
+      "featureTitle": "Create an 'About Jackman' section that includes a brief description of the town, its location in Somerset County, Maine, and highlights such as its proximity to the Canadian border and outdoor recreation.",
+      "files": [
+        "frontend/src/pages/AboutPage.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-town-services-section-listing-common-municipal-services-such-as-town-office-contact-information-public-works-and-emergency-services",
+      "featureTitle": "Create a 'Town Services' section listing common municipal services such as Town Office contact information, public works, and emergency services.",
+      "files": [
+        "frontend/src/pages/ServicesPage.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-local-events-news-section-that-allows-town-administrators-to-post-announcements-and-upcoming-events-store-events-and-announcements-in-the-backend-with-title-date-and-description-fields",
+      "featureTitle": "Create a 'Local Events & News' section that allows town administrators to post announcements and upcoming events. Store events and announcements in the backend with title, date, and description fields.",
+      "files": [
+        "frontend/src/pages/EventsPage.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-recreation-outdoors-section-highlighting-jackman-s-outdoor-activities-such-as-snowmobiling-fishing-hiking-and-the-moose-river-with-descriptive-text-and-relevant-imagery",
+      "featureTitle": "Create a 'Recreation & Outdoors' section highlighting Jackman's outdoor activities such as snowmobiling, fishing, hiking, and the Moose River, with descriptive text and relevant imagery.",
+      "files": [
+        "frontend/src/pages/RecreationPage.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-contact-us-section-displaying-the-town-of-jackman-s-address-zip-04945-a-placeholder-phone-number-and-a-simple-contact-form-with-name-email-and-message-fields-store-submitted-messages-in-the-backend",
+      "featureTitle": "Create a 'Contact Us' section displaying the Town of Jackman's address (ZIP 04945), a placeholder phone number, and a simple contact form with name, email, and message fields. Store submitted messages in the backend.",
+      "files": [
+        "frontend/src/pages/ContactPage.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-cohesive-visual-theme-inspired-by-the-rugged-forested-wilderness-of-northern-maine-using-deep-forest-greens-warm-slate-grays-and-natural-wood-toned-accents-typography-should-feel-sturdy-and-welcoming-layout-should-be-clean-and-easy-to-navigate-for-all-ages",
+      "featureTitle": "Apply a cohesive visual theme inspired by the rugged, forested wilderness of northern Maine — using deep forest greens, warm slate grays, and natural wood-toned accents. Typography should feel sturdy and welcoming. Layout should be clean and easy to navigate for all ages.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-render-the-generated-images-hero-landscape-outdoor-recreation-scene-as-static-assets-served-from-frontend-public-assets-generated-and-display-them-in-the-appropriate-site-sections",
+      "featureTitle": "Render the generated images (hero landscape, outdoor recreation scene) as static assets served from frontend/public/assets/generated and display them in the appropriate site sections.",
+      "files": [
+        "frontend/src/pages/AboutPage.tsx",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/RecreationPage.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

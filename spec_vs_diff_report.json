@@ -1,0 +1,71 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-27T22:26:12.282Z",
+  "summary": "The implementation covers nearly all requirements comprehensively. The backend has a single Motoko actor with event storage (title, date, description) and contact message storage. The frontend includes all required pages and sections with the wilderness theme. The main gap is that events sorting by date is not explicitly implemented in the backend's getEvents() — it returns events in insertion order without sorting. REQ-8 image placement in frontend/public/assets/generated is referenced in the code with correct paths. Overall the implementation is very thorough.",
+  "missing_requirements": [
+    {
+      "id": "REQ-4",
+      "requirement": "Events are sorted by date",
+      "reason": "The backend getEvents() returns events in insertion order without any date-based sorting. No sort call is visible in the EventsPage.tsx code either.",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/pages/EventsPage.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "User Profile Management with getCallerUserProfile, getUserProfile, and saveCallerUserProfile endpoints",
+      "reason": "The build request does not mention user profiles or profile management. The backend includes a full UserProfile type and associated CRUD methods that were not requested.",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/hooks/useQueries.ts"
+      ]
+    },
+    {
+      "description": "Admin Login and Internet Identity authentication UI integrated throughout the site",
+      "reason": "The build request explicitly listed 'User authentication or resident login portal' as a non-goal. The implementation includes full Internet Identity integration, an admin login/logout button in navigation, and access-control-gated admin features.",
+      "evidence": [
+        "frontend/src/components/Navigation.tsx",
+        "frontend/src/hooks/useInternetIdentity.ts",
+        "backend/main.mo",
+        "frontend/src/pages/EventsPage.tsx"
+      ]
+    },
+    {
+      "description": "Admin-only event deletion functionality",
+      "reason": "No requirement was specified for deleting events. The backend has a deleteEvent method and the frontend EventsPage shows delete controls for admins.",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/pages/EventsPage.tsx",
+        "frontend/src/hooks/useQueries.ts"
+      ]
+    }
+  ],
+  "confidence": 0.82,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/Navigation.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/AboutPage.tsx",
+    "frontend/src/pages/ContactPage.tsx",
+    "frontend/src/pages/EventsPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/RecreationPage.tsx",
+    "frontend/src/pages/ServicesPage.tsx",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

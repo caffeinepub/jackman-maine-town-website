@@ -1,0 +1,234 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-27T22:26:12.286Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 8,
+    "implemented": 8,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Create a homepage for the Town of Jackman, Maine (ZIP 04945) that prominently displays the town name, a welcome message, and key navigation to all sections of the site.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/App.tsx",
+          "frontend/src/components/Navigation.tsx",
+          "frontend/src/pages/HomePage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/App.tsx",
+          "frontend/src/components/Navigation.tsx",
+          "frontend/src/pages/HomePage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Create an 'About Jackman' section that includes a brief description of the town, its location in Somerset County, Maine, and highlights such as its proximity to the Canadian border and outdoor recreation.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/AboutPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/AboutPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-3",
+        "summary": "Create a 'Town Services' section listing common municipal services such as Town Office contact information, public works, and emergency services.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/ServicesPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/ServicesPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-4",
+        "summary": "Create a 'Local Events & News' section that allows town administrators to post announcements and upcoming events. Store events and announcements in the backend with title, date, and description fields.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/EventsPage.tsx",
+          "frontend/src/hooks/useEvents.ts",
+          "frontend/src/components/EventList.tsx",
+          "frontend/src/components/AddEventForm.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/EventsPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-5",
+        "summary": "Create a 'Recreation & Outdoors' section highlighting Jackman's outdoor activities such as snowmobiling, fishing, hiking, and the Moose River, with descriptive text and relevant imagery.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/RecreationPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/RecreationPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-6",
+        "summary": "Create a 'Contact Us' section displaying the Town of Jackman's address (ZIP 04945), a placeholder phone number, and a simple contact form with name, email, and message fields. Store submitted messages in the backend.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/ContactPage.tsx",
+          "frontend/src/hooks/useContact.ts",
+          "frontend/src/components/ContactForm.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/ContactPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-7",
+        "summary": "Apply a cohesive visual theme inspired by the rugged, forested wilderness of northern Maine — using deep forest greens, warm slate grays, and natural wood-toned accents. Typography should feel sturdy and welcoming. Layout should be clean and easy to navigate for all ages.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js",
+          "frontend/src/components/Layout.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
+        ]
+      },
+      {
+        "id": "REQ-8",
+        "summary": "Render the generated images (hero landscape, outdoor recreation scene) as static assets served from frontend/public/assets/generated and display them in the appropriate site sections.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/RecreationPage.tsx",
+          "frontend/src/pages/AboutPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/RecreationPage.tsx",
+          "frontend/src/pages/AboutPage.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/authorization/MixinAuthorization.mo",
+    "backend/authorization/access-control.mo",
+    "backend/blob-storage/Mixin.mo",
+    "backend/blob-storage/Storage.mo",
+    "backend/main.mo",
+    "build-request.json",
+    "build-template/Dockerfile",
+    "build-template/LICENSE",
+    "build-template/README.md",
+    "build-template/deploy.sh",
+    "build-template/icp.yaml",
+    "build-template/package.json",
+    "build-template/pnpm-lock.yaml",
+    "build-template/pnpm-workspace.yaml",
+    "build-template/scripts/prune-unused-images.js",
+    "build-template/scripts/resize-images.js",
+    "build-template/src/backend/canister.yaml",
+    "build-template/src/backend/system-idl/aaaaa-aa.did",
+    "build-template/src/frontend/canister.yaml",
+    "build-template/src/frontend/components.json",
+    "build-template/src/frontend/env.json",
+    "build-template/src/frontend/eslint-rules/no-bigint-in-query-keys.js",
+    "build-template/src/frontend/eslint-rules/require-internet-identity-provider.js",
+    "build-template/src/frontend/eslint.config.js",
+    "build-template/src/frontend/package.json",
+    "build-template/src/frontend/postcss.config.js",
+    "build-template/src/frontend/src/components/ui/accordion.tsx",
+    "build-template/src/frontend/src/components/ui/alert-dialog.tsx",
+    "build-template/src/frontend/src/components/ui/alert.tsx",
+    "build-template/src/frontend/src/components/ui/aspect-ratio.tsx",
+    "build-template/src/frontend/src/components/ui/avatar.tsx",
+    "build-template/src/frontend/src/components/ui/badge.tsx",
+    "build-template/src/frontend/src/components/ui/breadcrumb.tsx",
+    "build-template/src/frontend/src/components/ui/button.tsx",
+    "build-template/src/frontend/src/components/ui/calendar.tsx",
+    "build-template/src/frontend/src/components/ui/card.tsx",
+    "build-template/src/frontend/src/components/ui/carousel.tsx",
+    "build-template/src/frontend/src/components/ui/chart.tsx",
+    "build-template/src/frontend/src/components/ui/checkbox.tsx",
+    "build-template/src/frontend/src/components/ui/collapsible.tsx",
+    "build-template/src/frontend/src/components/ui/command.tsx",
+    "build-template/src/frontend/src/components/ui/context-menu.tsx",
+    "build-template/src/frontend/src/components/ui/dialog.tsx",
+    "build-template/src/frontend/src/components/ui/drawer.tsx",
+    "build-template/src/frontend/src/components/ui/dropdown-menu.tsx",
+    "build-template/src/frontend/src/components/ui/form.tsx",
+    "build-template/src/frontend/src/components/ui/hover-card.tsx",
+    "build-template/src/frontend/src/components/ui/input-otp.tsx",
+    "build-template/src/frontend/src/components/ui/input.tsx",
+    "build-template/src/frontend/src/components/ui/label.tsx",
+    "build-template/src/frontend/src/components/ui/menubar.tsx",
+    "build-template/src/frontend/src/components/ui/navigation-menu.tsx",
+    "build-template/src/frontend/src/components/ui/pagination.tsx",
+    "build-template/src/frontend/src/components/ui/popover.tsx",
+    "build-template/src/frontend/src/components/ui/progress.tsx",
+    "build-template/src/frontend/src/components/ui/radio-group.tsx",
+    "build-template/src/frontend/src/components/ui/resizable.tsx",
+    "build-template/src/frontend/src/components/ui/scroll-area.tsx",
+    "build-template/src/frontend/src/components/ui/select.tsx",
+    "build-template/src/frontend/src/components/ui/separator.tsx",
+    "build-template/src/frontend/src/components/ui/sheet.tsx",
+    "build-template/src/frontend/src/components/ui/sidebar.tsx",
+    "build-template/src/frontend/src/components/ui/skeleton.tsx",
+    "build-template/src/frontend/src/components/ui/slider.tsx",
+    "build-template/src/frontend/src/components/ui/sonner.tsx",
+    "build-template/src/frontend/src/components/ui/switch.tsx",
+    "build-template/src/frontend/src/components/ui/table.tsx",
+    "build-template/src/frontend/src/components/ui/tabs.tsx",
+    "build-template/src/frontend/src/components/ui/textarea.tsx",
+    "build-template/src/frontend/src/components/ui/toggle-group.tsx",
+    "build-template/src/frontend/src/components/ui/toggle.tsx",
+    "build-template/src/frontend/src/components/ui/tooltip.tsx",
+    "build-template/src/frontend/src/hooks/use-mobile.tsx",
+    "build-template/src/frontend/src/lib/utils.ts",
+    "build-template/src/frontend/tsconfig.json",
+    "build-template/src/frontend/vite.config.js",
+    "build-template/tsconfig.json",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/public/assets/generated/jackman-hero.dim_1440x600.png",
+    "frontend/public/assets/generated/jackman-logo.dim_256x256.png",
+    "frontend/public/assets/generated/jackman-recreation.dim_800x400.png",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/Navigation.tsx",
+    "frontend/src/config.ts",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/AboutPage.tsx",
+    "frontend/src/pages/ContactPage.tsx",
+    "frontend/src/pages/EventsPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/RecreationPage.tsx",
+    "frontend/src/pages/ServicesPage.tsx",
+    "frontend/src/ui-summary.json",
+    "frontend/src/utils/StorageClient.ts",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

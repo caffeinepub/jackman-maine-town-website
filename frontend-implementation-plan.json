@@ -1,0 +1,186 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Town website for Jackman, Maine (ZIP 04945)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create homepage with town branding, welcome message, and navigation to all site sections",
+      "acceptanceCriteria": [
+        "Homepage displays 'Jackman, Maine' and '04945' visibly",
+        "A welcoming hero section is present",
+        "Navigation links to all major sections are accessible from the homepage"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Set up React Router with routes for all site sections: homepage (/), About (/about), Town Services (/services), Events & News (/events), Recreation (/recreation), and Contact (/contact). Integrate the navigation component into the app layout."
+        },
+        {
+          "path": "frontend/src/components/Navigation.tsx",
+          "operation": "create",
+          "description": "Create main site navigation component with links to all sections (Home, About, Services, Events, Recreation, Contact). Apply theme styling with deep forest greens and slate grays. Ensure mobile-responsive with hamburger menu."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "create",
+          "description": "Create homepage featuring hero section with town name 'Jackman, Maine', ZIP code '04945', welcome message, and the generated panoramic landscape image from frontend/public/assets/generated/jackman-hero.dim_1440x600.png. Include navigation links to all major sections. Apply northern Maine wilderness theme with deep greens and slate grays."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Create About Jackman section with town description, location details, and highlights",
+      "acceptanceCriteria": [
+        "Section exists with descriptive text about Jackman, Maine",
+        "Geographic and notable highlights are mentioned"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/AboutPage.tsx",
+          "operation": "create",
+          "description": "Create About page with descriptive content about Jackman, Maine including its location in Somerset County, proximity to the Canadian border, and outdoor recreation highlights. Apply consistent theme styling with deep forest greens and warm neutral accents. Include the town logo from frontend/public/assets/generated/jackman-logo.dim_256x256.png."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Create Town Services section listing municipal services including Town Office, public works, and emergency services",
+      "acceptanceCriteria": [
+        "Town Services section is present and readable",
+        "At least three service categories are displayed"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ServicesPage.tsx",
+          "operation": "create",
+          "description": "Create Town Services page displaying at least three service categories: Town Office contact information, public works, and emergency services. Use card-based layout with consistent theme styling. Ensure content is readable and accessible."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Display events and announcements fetched from backend, sorted by date",
+      "acceptanceCriteria": [
+        "Frontend displays a list of upcoming events and announcements",
+        "Events are sorted by date"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/EventsPage.tsx",
+          "operation": "create",
+          "description": "Create Events & News page that fetches events from backend using getEvents() and displays them sorted by date. Each event shows title, date, and description. Use the authorization component to conditionally show admin controls (add/delete events) only to authenticated admin users. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/useEvents.ts",
+          "operation": "create",
+          "description": "Create React Query hook to fetch events from backend via getEvents(). Include mutations for addEvent and deleteEvent that are restricted to admin users. Handle loading and error states appropriately."
+        },
+        {
+          "path": "frontend/src/components/EventList.tsx",
+          "operation": "create",
+          "description": "Create event list component that displays events sorted by date in descending order. Show title, formatted date, and description for each event. Apply theme styling with clean typography."
+        },
+        {
+          "path": "frontend/src/components/AddEventForm.tsx",
+          "operation": "create",
+          "description": "Create form component for admin users to add new events with fields for title, date (date picker), and description. Use the authorization component to ensure only admins can access this form. Submit data via addEvent mutation. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Create Recreation section highlighting outdoor activities with descriptive text and imagery",
+      "acceptanceCriteria": [
+        "Recreation section is present with at least four activity highlights",
+        "Section includes the generated outdoor/nature imagery"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/RecreationPage.tsx",
+          "operation": "create",
+          "description": "Create Recreation & Outdoors page highlighting at least four activities: snowmobiling, fishing, hiking, and the Moose River. Include descriptive text for each activity and display the generated outdoor recreation image from frontend/public/assets/generated/jackman-recreation.dim_800x400.png. Apply wilderness theme with autumn and winter color tones."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Display contact information and provide contact form with backend submission",
+      "acceptanceCriteria": [
+        "Contact section displays town address with ZIP 04945",
+        "Contact form accepts name, email, and message inputs",
+        "User receives a confirmation message after submission"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ContactPage.tsx",
+          "operation": "create",
+          "description": "Create Contact page displaying Town of Jackman address (including ZIP 04945) fetched from getTownAddress() and phone number from getTownPhoneNumber(). Include contact form with name, email, and message fields that submits to backend via submitMessage(). Show success confirmation after submission. Apply consistent theme styling."
+        },
+        {
+          "path": "frontend/src/hooks/useContact.ts",
+          "operation": "create",
+          "description": "Create React Query hooks to fetch town contact information (getTownAddress, getTownPhoneNumber) and mutation to submit contact form data via submitMessage(). Handle loading, success, and error states."
+        },
+        {
+          "path": "frontend/src/components/ContactForm.tsx",
+          "operation": "create",
+          "description": "Create contact form component with controlled inputs for name, email, and message. Include validation and submit handler that calls submitMessage mutation. Display success message after successful submission."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Apply cohesive northern Maine wilderness theme with deep greens, slate grays, and natural accents throughout the site",
+      "acceptanceCriteria": [
+        "Color palette uses deep greens, slate grays, and warm neutral accents throughout",
+        "Typography is consistent and readable across all sections",
+        "Layout is responsive and accessible on desktop and mobile"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define global CSS custom properties for the northern Maine wilderness theme: deep forest greens (#1a4d2e, #2d5f3f), slate grays (#4a5568, #718096), warm wood-toned neutrals (#d4a574, #8b7355). Set base typography with sturdy, welcoming font stacks. Ensure responsive and accessible base styles."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with custom color palette matching northern Maine wilderness: forest greens, slate grays, warm neutrals. Configure custom font families for sturdy, welcoming typography. Add responsive breakpoints and accessibility-focused utilities."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "create",
+          "description": "Create layout wrapper component that applies consistent page structure with navigation, main content area, and footer. Ensure responsive design with mobile-first approach. Apply theme styling consistently across all pages."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Render generated images as static assets in appropriate site sections",
+      "acceptanceCriteria": [
+        "Generated images are placed in frontend/public/assets/generated",
+        "Hero section displays the panoramic landscape image",
+        "Recreation section displays the outdoor activities image"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Wire the hero section to display the generated panoramic landscape image from frontend/public/assets/generated/jackman-hero.dim_1440x600.png as a background or prominent hero image. Ensure proper responsive sizing and optimization."
+        },
+        {
+          "path": "frontend/src/pages/RecreationPage.tsx",
+          "operation": "modify",
+          "description": "Wire the recreation section to display the generated outdoor activities collage image from frontend/public/assets/generated/jackman-recreation.dim_800x400.png. Position appropriately within the activity highlights layout."
+        },
+        {
+          "path": "frontend/src/pages/AboutPage.tsx",
+          "operation": "modify",
+          "description": "Wire the About page to display the town logo from frontend/public/assets/generated/jackman-logo.dim_256x256.png in an appropriate location such as the page header or sidebar."
+        }
+      ]
+    }
+  ]
+}
