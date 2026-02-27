@@ -6,7 +6,7 @@
   "frontend/src/components/Footer.tsx": "Site footer with brand tagline, quick links, contact info, copyright year, and caffeine.ai attribution with UTM tracking.",
   "frontend/src/pages/HomePage.tsx": "Homepage with a full-bleed hero image, welcome copy, quick-link cards to major sections, and a four-column highlights grid showcasing Jackman's outdoor offerings.",
   "frontend/src/pages/AboutPage.tsx": "About page with town logo, quick-facts sidebar, and rich descriptive sections covering Jackman's history, geography, and community spirit.",
-  "frontend/src/pages/ServicesPage.tsx": "Town Services page displaying six service categories (Town Office, Emergency, Public Works, Solid Waste, Library, Motor Vehicles) in a card grid with an emergency banner.",
+  "frontend/src/pages/ServicesPage.tsx": "Town Services page with a prominent Emergency Services section (Sheriff, Fire Department, Ambulance) featuring clickable `tel:911` call buttons, followed by the existing municipal services grid and the emergency banner at the top.",
   "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations: getEvents, addEvent, deleteEvent, getTownAddress, getTownPhoneNumber, submitMessage, isCallerAdmin, and getCallerUserProfile.",
   "frontend/src/pages/EventsPage.tsx": "Events & News page that fetches and displays backend events sorted by date, with an inline add-event form and delete controls visible only to authenticated admins.",
   "frontend/src/pages/RecreationPage.tsx": "Recreation page featuring the hero recreation image and six detailed activity cards (snowmobiling, fishing, hiking, paddling, camping, wildlife) with a plan-your-visit CTA.",

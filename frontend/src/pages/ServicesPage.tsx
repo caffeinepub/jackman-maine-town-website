@@ -1,10 +1,30 @@
-import { Phone, Clock, AlertTriangle, Wrench, BookOpen, Trash2, Car, Building2 } from 'lucide-react';
+import { Phone, Clock, AlertTriangle, Wrench, BookOpen, Trash2, Car, Building2, ShieldAlert, Flame, Siren } from 'lucide-react';
+
+const emergencyServices = [
+  {
+    name: 'Sheriff',
+    icon: ShieldAlert,
+    description: 'Somerset County Sheriff\'s Office',
+    phone: '911',
+  },
+  {
+    name: 'Fire Department',
+    icon: Flame,
+    description: 'Jackman Volunteer Fire Department',
+    phone: '911',
+  },
+  {
+    name: 'Ambulance',
+    icon: Siren,
+    description: 'Jackman Ambulance Service',
+    phone: '911',
+  },
+];
 
 const services = [
   {
     category: 'Town Office',
     icon: Building2,
-    color: 'forest',
     items: [
       { label: 'Address', value: '123 Main Street, Jackman, ME 04945' },
       { label: 'Phone', value: '(123) 456-7890' },
@@ -13,20 +33,8 @@ const services = [
     ],
   },
   {
-    category: 'Emergency Services',
-    icon: AlertTriangle,
-    color: 'red',
-    items: [
-      { label: 'Emergency', value: '911' },
-      { label: 'Fire Department', value: 'Jackman Volunteer Fire Dept — (123) 456-7891' },
-      { label: 'Police', value: 'Somerset County Sheriff — (123) 456-7892' },
-      { label: 'EMS', value: 'Jackman Ambulance Service — (123) 456-7893' },
-    ],
-  },
-  {
     category: 'Public Works',
     icon: Wrench,
-    color: 'amber',
     items: [
       { label: 'Phone', value: '(123) 456-7894' },
       { label: 'Services', value: 'Road maintenance, snow plowing, storm drains, and infrastructure repairs.' },
@@ -37,7 +45,6 @@ const services = [
   {
     category: 'Solid Waste & Recycling',
     icon: Trash2,
-    color: 'forest',
     items: [
       { label: 'Transfer Station', value: '456 Dump Road, Jackman, ME 04945' },
       { label: 'Hours', value: 'Tue, Thu, Sat: 8:00 AM – 4:00 PM' },
@@ -48,7 +55,6 @@ const services = [
   {
     category: 'Library',
     icon: BookOpen,
-    color: 'amber',
     items: [
       { label: 'Name', value: 'Jackman Public Library' },
       { label: 'Address', value: '789 Library Lane, Jackman, ME 04945' },
@@ -59,7 +65,6 @@ const services = [
   {
     category: 'Motor Vehicle Registration',
     icon: Car,
-    color: 'forest',
     items: [
       { label: 'Location', value: 'Town Office, 123 Main Street' },
       { label: 'Hours', value: 'Mon–Fri: 8:00 AM – 3:30 PM' },
@@ -91,9 +96,48 @@ export default function ServicesPage() {
         </div>
       </div>
 
+      {/* Emergency Services Section */}
+      <section className="py-10 bg-red-50 border-b border-red-200">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="bg-red-700 rounded-lg p-2">
+              <AlertTriangle size={20} className="text-white" />
+            </div>
+            <div>
+              <h2 className="font-serif text-2xl font-bold text-red-800">Emergency Services</h2>
+              <p className="text-sm text-red-700 font-sans">Dial 911 for all emergencies — available 24 hours a day, 7 days a week</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {emergencyServices.map(({ name, icon: Icon, description, phone }) => (
+              <div
+                key={name}
+                className="bg-white border-2 border-red-200 rounded-xl p-5 flex flex-col items-center text-center shadow-sm hover:border-red-400 transition-colors"
+              >
+                <div className="bg-red-100 rounded-full p-3 mb-3">
+                  <Icon size={24} className="text-red-700" />
+                </div>
+                <h3 className="font-serif font-bold text-red-800 text-lg mb-1">{name}</h3>
+                <p className="text-xs text-muted-foreground font-sans mb-4">{description}</p>
+                <a
+                  href="tel:911"
+                  className="inline-flex items-center gap-2 bg-red-700 hover:bg-red-800 text-white font-sans font-semibold text-base px-6 py-2.5 rounded-full transition-colors shadow-sm"
+                  aria-label={`Call 911 for ${name}`}
+                >
+                  <Phone size={16} />
+                  Call 911
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Services Grid */}
       <section className="py-14 bg-background">
         <div className="container mx-auto px-4">
+          <h2 className="font-serif text-2xl font-bold text-forest-700 mb-6">Municipal Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map(({ category, icon: Icon, items }) => (
               <div key={category} className="bg-card rounded-xl border border-border shadow-card overflow-hidden">
