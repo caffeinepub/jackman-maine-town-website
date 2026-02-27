@@ -1,22 +1,23 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Add Hunting to Recreation & Outdoors section",
+  "title": "Add hunting & fishing highlight to homepage",
   "requirements": [
     {
-      "id": "REQ-10",
-      "summary": "Add 'Hunting' as a recreation activity entry in the Recreation & Outdoors page, following the same card/section format used by existing activities (snowmobiling, fishing, hiking, etc.)",
+      "id": "REQ-11",
+      "summary": "Add a prominent hunting and fishing callout section to the HomePage hero area that highlights Jackman, Maine as a world-class hunting and fishing destination, styled with the Northern Maine wilderness theme and linking to the Recreation & Outdoors page.",
       "acceptanceCriteria": [
-        "A 'Hunting' section/card appears on the Recreation & Outdoors page alongside existing activities.",
-        "The hunting entry includes a title, descriptive text, and bullet-point highlights consistent with other activity entries.",
-        "The visual style matches the existing Northern Maine theme (deep forest greens, slate grays, amber accents).",
-        "No existing recreation activities are removed or altered."
+        "The homepage displays a clearly visible section or callout stating Jackman is known for hunting and fishing.",
+        "The callout includes a brief descriptive line referencing hunting and fishing opportunities in the area.",
+        "The element links to the Recreation & Outdoors page.",
+        "Styling is consistent with the existing Northern Maine wilderness theme (forest greens, amber/wood-tone accents).",
+        "The addition does not break existing homepage layout or navigation."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/pages/RecreationPage.tsx",
+          "path": "frontend/src/pages/HomePage.tsx",
           "operation": "modify",
-          "description": "Add a new 'Hunting' activity section to the recreation activities list. Include a title, descriptive paragraph about hunting opportunities in the Jackman, Maine area, and a bullet-point list highlighting key hunting features (e.g., deer, moose, bear, upland bird seasons). Follow the exact same card/section structure, styling, and layout pattern used by existing activities (snowmobiling, fishing, hiking, paddling, camping, wildlife) to maintain visual consistency with the Northern Maine theme."
+          "description": "Add a dedicated hunting and fishing callout section within the hero area or immediately after it. The callout should include a prominent heading such as 'World-Class Hunting & Fishing Destination' and a supporting description mentioning trophy deer, moose, bear hunting, and fishing on the Moose River and area lakes. Style the section with forest green background (bg-forest-800 or bg-forest-900), amber accent borders or highlights, and ensure it is visually distinct. Include a Link component that navigates to '/recreation' (the Recreation & Outdoors page). Position this callout prominently so it's immediately visible on page load, either as a banner within the hero section or as the first content block after the hero."
         }
       ]
     }

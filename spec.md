@@ -1,12 +1,12 @@
 # Specification
 
 ## Summary
-**Goal:** Add a "Hunting" activity entry to the Recreation & Outdoors page of the Jackman Maine site.
+**Goal:** Add a prominent hunting and fishing callout to the Jackman, Maine homepage.
 
 **Planned changes:**
-- Add a Hunting section/card to `RecreationPage.tsx` following the existing card/section format used by other activities (snowmobiling, fishing, hiking, etc.)
-- Include a short description of hunting opportunities in the Jackman, Maine area
-- Include bullet-point highlights covering deer, moose, bear, and upland bird seasons
-- Match the existing visual style (deep forest greens, slate grays, amber accents)
+- Add a dedicated callout section or banner to the homepage hero or quick-highlights area declaring Jackman as a "World-Class Hunting & Fishing Destination"
+- Include a short supporting line referencing trophy deer, moose, and bear hunting along with fishing on the Moose River and area lakes
+- Style the callout using deep forest greens and amber/wood-tone accents consistent with the existing Northern Maine wilderness theme
+- Link the callout to the Recreation & Outdoors page
 
-**User-visible outcome:** Visitors to the Recreation & Outdoors page will see a Hunting card alongside existing activities, with descriptive text and seasonal highlights.
+**User-visible outcome:** Visitors to the homepage will immediately see a visually prominent section highlighting Jackman's reputation for hunting and fishing, with a link to learn more on the Recreation & Outdoors page.

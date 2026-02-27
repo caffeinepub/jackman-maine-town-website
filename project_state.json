@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 7,
+  "projectStateVersion": 9,
   "summary": "A town website for Jackman, Maine (ZIP: 04945). The site will serve as an informational hub for the town.",
   "architectural_notes": [
     "Town: Jackman, Maine | ZIP: 04945"
@@ -87,6 +87,14 @@
         "REQ-10"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-update-the-homepage-frontend-src-pages-homepage-tsx-to-prominently-highlight-that-jackman-maine-is-renowned-for-hunting-and-fishing-add-a-dedicated-callout-section-or-prominent-badge-banner-in-the-hero-area-or-quick-highlights-zone-that-reads-something-like-world-class-hunting-fishing-destination-with-a-short-supporting-line-e-g-jackman-is-celebrated-for-trophy-deer-moose-and-bear-hunting-and-some-of-maine-s-finest-fishing-on-the-moose-river-and-area-lakes-the-treatment-should-be-visually-prominent-consistent-with-the-existing-northern-maine-wilderness-theme-deep-forest-greens-amber-accents-and-link-to-the-recreation-outdoors-page",
+      "title": "Update the HomePage (frontend/src/pages/HomePage.tsx) to prominently highlight that Jackman, Maine is renowned for hunting and fishing. Add a dedicated callout section or prominent badge/banner in the hero area or quick-highlights zone that reads something like 'World-Class Hunting & Fishing Destination' with a short supporting line (e.g., 'Jackman is celebrated for trophy deer, moose, and bear hunting and some of Maine's finest fishing on the Moose River and area lakes'). The treatment should be visually prominent, consistent with the existing Northern Maine wilderness theme (deep forest greens, amber accents), and link to the Recreation & Outdoors page.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -105,6 +113,12 @@
     {
       "id": "AR-3",
       "summary": "Add 'Hunting' to the Recreation & Outdoors section titles/activities",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Add a highlight on the homepage that Jackman is known for hunting and fishing",
       "reqIds": [],
       "status": "pending"
     }

@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router';
-import { ChevronRight, TreePine, Fish, Snowflake, Mountain, CalendarDays, Phone } from 'lucide-react';
+import { ChevronRight, TreePine, Fish, Snowflake, Mountain, CalendarDays, Phone, Target, Crosshair } from 'lucide-react';
 
 const quickLinks = [
   { icon: CalendarDays, label: 'Events & News', path: '/events', desc: 'Stay up to date with local happenings' },
@@ -51,6 +51,67 @@ export default function HomePage() {
             >
               Contact Town Office
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Hunting & Fishing Callout Banner */}
+      <section className="bg-forest-900 border-b-4 border-amber-400">
+        <div className="container mx-auto px-4 py-10 md:py-12">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            {/* Icon cluster */}
+            <div className="flex items-center gap-4 shrink-0">
+              <div className="flex items-center justify-center w-16 h-16 bg-amber-400/15 border border-amber-400/30 rounded-full">
+                <Crosshair size={30} className="text-amber-300" />
+              </div>
+              <div className="w-px h-12 bg-amber-400/30 hidden sm:block" />
+              <div className="flex items-center justify-center w-16 h-16 bg-amber-400/15 border border-amber-400/30 rounded-full">
+                <Fish size={30} className="text-amber-300" />
+              </div>
+            </div>
+
+            {/* Text content */}
+            <div className="flex-1 text-center md:text-left">
+              <div className="inline-flex items-center gap-2 bg-amber-400/20 border border-amber-300/30 rounded-full px-3 py-1 mb-3">
+                <Target size={12} className="text-amber-300" />
+                <span className="text-amber-200 text-xs font-sans tracking-widest uppercase font-semibold">
+                  World-Renowned Destination
+                </span>
+              </div>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-3 leading-tight">
+                Maine's Premier Hunting &amp; Fishing Country
+              </h2>
+              <p className="text-slate-300 font-sans text-base md:text-lg leading-relaxed max-w-2xl">
+                Jackman is celebrated across New England as a top destination for trophy white-tailed deer, moose, and
+                black bear hunting — and for world-class fishing on the Moose River, Wood Pond, and dozens of pristine
+                backcountry lakes. Whether you're casting for landlocked salmon at dawn or tracking big game through
+                ancient hardwood forests, Jackman delivers the authentic Maine wilderness experience.
+              </p>
+            </div>
+
+            {/* Stat pills + CTA */}
+            <div className="flex flex-col items-center md:items-end gap-4 shrink-0">
+              <div className="flex flex-wrap justify-center md:justify-end gap-3">
+                <div className="bg-forest-800 border border-forest-600 rounded-lg px-4 py-2 text-center">
+                  <div className="font-serif font-bold text-amber-300 text-xl">Deer</div>
+                  <div className="text-slate-400 text-xs font-sans">Trophy Hunting</div>
+                </div>
+                <div className="bg-forest-800 border border-forest-600 rounded-lg px-4 py-2 text-center">
+                  <div className="font-serif font-bold text-amber-300 text-xl">Moose</div>
+                  <div className="text-slate-400 text-xs font-sans">Big Game</div>
+                </div>
+                <div className="bg-forest-800 border border-forest-600 rounded-lg px-4 py-2 text-center">
+                  <div className="font-serif font-bold text-amber-300 text-xl">Salmon</div>
+                  <div className="text-slate-400 text-xs font-sans">Fly Fishing</div>
+                </div>
+              </div>
+              <Link
+                to="/recreation"
+                className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-forest-900 font-sans font-semibold px-6 py-3 rounded transition-colors shadow-hero whitespace-nowrap"
+              >
+                Plan Your Hunt or Trip <ChevronRight size={16} />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

@@ -1,7 +1,7 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-27T23:06:15.131Z",
+  "generatedAt": "2026-02-27T23:11:35.804Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
@@ -11,14 +11,14 @@
     "implemented": 1,
     "items": [
       {
-        "id": "REQ-10",
-        "summary": "Add 'Hunting' as a recreation activity entry in the Recreation & Outdoors page (frontend/src/pages/RecreationPage.tsx), following the same card/section format used by existing activities (snowmobiling, fishing, hiking, etc.). Include a short description of hunting opportunities in the Jackman, Maine area and relevant bullet-point highlights (e.g., deer, moose, bear, upland bird seasons).",
+        "id": "REQ-11",
+        "summary": "Update the HomePage (frontend/src/pages/HomePage.tsx) to prominently highlight that Jackman, Maine is renowned for hunting and fishing. Add a dedicated callout section or prominent badge/banner in the hero area or quick-highlights zone that reads something like 'World-Class Hunting & Fishing Destination' with a short supporting line (e.g., 'Jackman is celebrated for trophy deer, moose, and bear hunting and some of Maine's finest fishing on the Moose River and area lakes'). The treatment should be visually prominent, consistent with the existing Northern Maine wilderness theme (deep forest greens, amber accents), and link to the Recreation & Outdoors page.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/pages/RecreationPage.tsx"
+          "frontend/src/pages/HomePage.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/pages/RecreationPage.tsx"
+          "frontend/src/pages/HomePage.tsx"
         ]
       }
     ]
@@ -28,7 +28,7 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/pages/RecreationPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",
