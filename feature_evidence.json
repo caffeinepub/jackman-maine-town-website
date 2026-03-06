@@ -2,10 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-homepage-frontend-src-pages-homepage-tsx-to-prominently-highlight-that-jackman-maine-is-renowned-for-hunting-and-fishing-add-a-dedicated-callout-section-or-prominent-badge-banner-in-the-hero-area-or-quick-highlights-zone-that-reads-something-like-world-class-hunting-fishing-destination-with-a-short-supporting-line-e-g-jackman-is-celebrated-for-trophy-deer-moose-and-bear-hunting-and-some-of-maine-s-finest-fishing-on-the-moose-river-and-area-lakes-the-treatment-should-be-visually-prominent-consistent-with-the-existing-northern-maine-wilderness-theme-deep-forest-greens-amber-accents-and-link-to-the-recreation-outdoors-page",
-      "featureTitle": "Update the HomePage (frontend/src/pages/HomePage.tsx) to prominently highlight that Jackman, Maine is renowned for hunting and fishing. Add a dedicated callout section or prominent badge/banner in the hero area or quick-highlights zone that reads something like 'World-Class Hunting & Fishing Destination' with a short supporting line (e.g., 'Jackman is celebrated for trophy deer, moose, and bear hunting and some of Maine's finest fishing on the Moose River and area lakes'). The treatment should be visually prominent, consistent with the existing Northern Maine wilderness theme (deep forest greens, amber accents), and link to the Recreation & Outdoors page.",
+      "featureId": "feature-create-a-new-townofficedashboardpage-at-frontend-src-pages-townofficedashboardpage-tsx-that-is-accessible-only-to-authenticated-admin-staff-users-following-the-same-useisadmin-pattern-used-in-reportproblempage-tsx-and-eventspage-tsx-the-page-should-display-all-submitted-problem-reports-fetched-via-the-existing-usegetproblemreports-react-query-hook-each-report-card-must-show-problem-type-location-description-detailed-description-reporter-name-reporter-contact-info-email-phone-and-submission-date-include-a-delete-button-on-each-card-for-admins-if-the-user-is-not-authenticated-as-admin-show-a-message-indicating-that-access-is-restricted-to-town-office-staff-style-the-page-consistently-with-the-existing-northern-maine-wilderness-theme-forest-greens-slate-grays-amber-accents-using-the-same-card-section-layout-patterns-found-in-servicespage-tsx-and-reportproblempage-tsx-include-a-prominent-page-heading-such-as-town-office-problem-reports-dashboard",
+      "featureTitle": "Create a new `TownOfficeDashboardPage` at `frontend/src/pages/TownOfficeDashboardPage.tsx` that is accessible only to authenticated admin/staff users (following the same `useIsAdmin` pattern used in `ReportProblemPage.tsx` and `EventsPage.tsx`). The page should display all submitted problem reports fetched via the existing `useGetProblemReports` React Query hook. Each report card must show: problem type, location description, detailed description, reporter name, reporter contact info (email/phone), and submission date. Include a delete button on each card for admins. If the user is not authenticated as admin, show a message indicating that access is restricted to town office staff. Style the page consistently with the existing Northern Maine wilderness theme (forest greens, slate grays, amber accents) using the same card/section layout patterns found in `ServicesPage.tsx` and `ReportProblemPage.tsx`. Include a prominent page heading such as 'Town Office — Problem Reports Dashboard'.",
       "files": [
-        "frontend/src/pages/HomePage.tsx"
+        "frontend/src/pages/TownOfficeDashboardPage.tsx"
       ],
       "components": [
         "blob-storage@4.0.0",
@@ -17,7 +17,48 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-11"
+        "REQ-21"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-register-the-townofficedashboardpage-as-a-route-in-frontend-src-app-tsx-at-path-town-office-reports-following-the-same-route-definition-pattern-used-for-existing-pages",
+      "featureTitle": "Register the `TownOfficeDashboardPage` as a route in `frontend/src/App.tsx` at path `/town-office/reports`, following the same route definition pattern used for existing pages.",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-22"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-town-office-dashboard-link-to-both-the-desktop-and-mobile-menus-in-frontend-src-components-navigation-tsx-and-add-it-to-the-quick-links-in-frontend-src-components-footer-tsx-the-link-should-point-to-town-office-reports-and-be-labeled-town-office-dashboard-or-staff-dashboard-follow-the-same-link-patterns-used-for-existing-pages-optionally-only-display-this-link-when-the-user-is-authenticated-as-an-admin",
+      "featureTitle": "Add a 'Town Office Dashboard' link to both the desktop and mobile menus in `frontend/src/components/Navigation.tsx`, and add it to the quick links in `frontend/src/components/Footer.tsx`. The link should point to `/town-office/reports` and be labeled 'Town Office Dashboard' (or 'Staff Dashboard'). Follow the same link patterns used for existing pages. Optionally, only display this link when the user is authenticated as an admin.",
+      "files": [
+        "frontend/src/components/Footer.tsx",
+        "frontend/src/components/Navigation.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-23"
       ],
       "confidence": "high"
     }

@@ -38,6 +38,22 @@ export const Message = IDL.Record({
   'message' : IDL.Text,
   'timestamp' : Time,
 });
+export const ProblemType = IDL.Variant({
+  'other' : IDL.Null,
+  'waterSewer' : IDL.Null,
+  'roadDamage' : IDL.Null,
+  'pothole' : IDL.Null,
+  'streetlight' : IDL.Null,
+});
+export const ProblemReport = IDL.Record({
+  'id' : IDL.Nat,
+  'reporterName' : IDL.Text,
+  'problemType' : ProblemType,
+  'reporterContact' : IDL.Text,
+  'locationDescription' : IDL.Text,
+  'timestamp' : Time,
+  'detailedDescription' : IDL.Text,
+});
 
 export const idlService = IDL.Service({
   '_caffeineStorageBlobIsLive' : IDL.Func(
@@ -70,10 +86,12 @@ export const idlService = IDL.Service({
   'addEvent' : IDL.Func([IDL.Text, Time, IDL.Text], [], []),
   'assignCallerUserRole' : IDL.Func([IDL.Principal, UserRole], [], []),
   'deleteEvent' : IDL.Func([IDL.Nat], [], []),
+  'deleteReport' : IDL.Func([IDL.Nat], [], []),
   'getCallerUserProfile' : IDL.Func([], [IDL.Opt(UserProfile)], ['query']),
   'getCallerUserRole' : IDL.Func([], [UserRole], ['query']),
   'getEvents' : IDL.Func([], [IDL.Vec(Event)], ['query']),
   'getMessages' : IDL.Func([], [IDL.Vec(Message)], ['query']),
+  'getReports' : IDL.Func([], [IDL.Vec(ProblemReport)], ['query']),
   'getTownAddress' : IDL.Func([], [IDL.Text], ['query']),
   'getTownPhoneNumber' : IDL.Func([], [IDL.Text], ['query']),
   'getUserProfile' : IDL.Func(
@@ -84,6 +102,11 @@ export const idlService = IDL.Service({
   'isCallerAdmin' : IDL.Func([], [IDL.Bool], ['query']),
   'saveCallerUserProfile' : IDL.Func([UserProfile], [], []),
   'submitMessage' : IDL.Func([IDL.Text, IDL.Text, IDL.Text], [], []),
+  'submitProblemReport' : IDL.Func(
+      [ProblemType, IDL.Text, IDL.Text, IDL.Text, IDL.Text],
+      [IDL.Nat],
+      [],
+    ),
 });
 
 export const idlInitArgs = [];
@@ -119,6 +142,22 @@ export const idlFactory = ({ IDL }) => {
     'message' : IDL.Text,
     'timestamp' : Time,
   });
+  const ProblemType = IDL.Variant({
+    'other' : IDL.Null,
+    'waterSewer' : IDL.Null,
+    'roadDamage' : IDL.Null,
+    'pothole' : IDL.Null,
+    'streetlight' : IDL.Null,
+  });
+  const ProblemReport = IDL.Record({
+    'id' : IDL.Nat,
+    'reporterName' : IDL.Text,
+    'problemType' : ProblemType,
+    'reporterContact' : IDL.Text,
+    'locationDescription' : IDL.Text,
+    'timestamp' : Time,
+    'detailedDescription' : IDL.Text,
+  });
   
   return IDL.Service({
     '_caffeineStorageBlobIsLive' : IDL.Func(
@@ -151,10 +190,12 @@ export const idlFactory = ({ IDL }) => {
     'addEvent' : IDL.Func([IDL.Text, Time, IDL.Text], [], []),
     'assignCallerUserRole' : IDL.Func([IDL.Principal, UserRole], [], []),
     'deleteEvent' : IDL.Func([IDL.Nat], [], []),
+    'deleteReport' : IDL.Func([IDL.Nat], [], []),
     'getCallerUserProfile' : IDL.Func([], [IDL.Opt(UserProfile)], ['query']),
     'getCallerUserRole' : IDL.Func([], [UserRole], ['query']),
     'getEvents' : IDL.Func([], [IDL.Vec(Event)], ['query']),
     'getMessages' : IDL.Func([], [IDL.Vec(Message)], ['query']),
+    'getReports' : IDL.Func([], [IDL.Vec(ProblemReport)], ['query']),
     'getTownAddress' : IDL.Func([], [IDL.Text], ['query']),
     'getTownPhoneNumber' : IDL.Func([], [IDL.Text], ['query']),
     'getUserProfile' : IDL.Func(
@@ -165,6 +206,11 @@ export const idlFactory = ({ IDL }) => {
     'isCallerAdmin' : IDL.Func([], [IDL.Bool], ['query']),
     'saveCallerUserProfile' : IDL.Func([UserProfile], [], []),
     'submitMessage' : IDL.Func([IDL.Text, IDL.Text, IDL.Text], [], []),
+    'submitProblemReport' : IDL.Func(
+        [ProblemType, IDL.Text, IDL.Text, IDL.Text, IDL.Text],
+        [IDL.Nat],
+        [],
+      ),
   });
 };
 

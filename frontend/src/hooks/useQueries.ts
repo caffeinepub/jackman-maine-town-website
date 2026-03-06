@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useActor } from './useActor';
-import type { Event, UserProfile } from '../backend';
+import type { Event, UserProfile, ProblemReport, ProblemType } from '../backend';
 
 // ── Events ──────────────────────────────────────────────────────────────────
 
@@ -119,4 +119,67 @@ export function useGetCallerUserProfile() {
     isLoading: actorFetching || query.isLoading,
     isFetched: !!actor && query.isFetched,
   };
+}
+
+// ── Problem Reports ───────────────────────────────────────────────────────────
+
+export function useSubmitProblemReport() {
+  const { actor } = useActor();
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async ({
+      problemType,
+      locationDescription,
+      detailedDescription,
+      reporterName,
+      reporterContact,
+    }: {
+      problemType: ProblemType;
+      locationDescription: string;
+      detailedDescription: string;
+      reporterName: string;
+      reporterContact: string;
+    }) => {
+      if (!actor) throw new Error('Actor not available');
+      return actor.submitProblemReport(
+        problemType,
+        locationDescription,
+        detailedDescription,
+        reporterName,
+        reporterContact
+      );
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['problemReports'] });
+    },
+  });
+}
+
+export function useGetProblemReports(isAdmin: boolean) {
+  const { actor, isFetching } = useActor();
+
+  return useQuery<ProblemReport[]>({
+    queryKey: ['problemReports'],
+    queryFn: async () => {
+      if (!actor) return [];
+      return actor.getReports();
+    },
+    enabled: !!actor && !isFetching && isAdmin,
+  });
+}
+
+export function useDeleteProblemReport() {
+  const { actor } = useActor();
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async (id: bigint) => {
+      if (!actor) throw new Error('Actor not available');
+      return actor.deleteReport(id);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['problemReports'] });
+    },
+  });
 }

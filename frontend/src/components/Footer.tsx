@@ -30,7 +30,10 @@ export default function Footer() {
                 { label: 'Town Services', path: '/services' },
                 { label: 'Events & News', path: '/events' },
                 { label: 'Recreation', path: '/recreation' },
+                { label: 'Local Businesses', path: '/local-businesses' },
                 { label: 'Contact Us', path: '/contact' },
+                { label: 'Report a Problem', path: '/report-problem' },
+                { label: 'Town Office Dashboard', path: '/town-office/reports' },
               ].map((link) => (
                 <li key={link.path}>
                   <Link to={link.path} className="text-slate-400 hover:text-amber-300 transition-colors">

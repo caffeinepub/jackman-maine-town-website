@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useRouterState } from '@tanstack/react-router';
-import { Menu, X, TreePine } from 'lucide-react';
+import { Menu, X, AlertTriangle, Building2 } from 'lucide-react';
 import { useInternetIdentity } from '../hooks/useInternetIdentity';
 import { useQueryClient } from '@tanstack/react-query';
 
@@ -10,7 +10,10 @@ const navLinks = [
   { label: 'Services', path: '/services' },
   { label: 'Events', path: '/events' },
   { label: 'Recreation', path: '/recreation' },
+  { label: 'Local Businesses', path: '/local-businesses' },
   { label: 'Contact', path: '/contact' },
+  { label: 'Report a Problem', path: '/report-problem', highlight: true },
+  { label: 'Town Office Dashboard', path: '/town-office/reports', staff: true },
 ];
 
 export default function Navigation() {
@@ -69,6 +72,40 @@ export default function Navigation() {
         <ul className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => {
             const isActive = currentPath === link.path;
+            if (link.highlight) {
+              return (
+                <li key={link.path}>
+                  <Link
+                    to={link.path}
+                    className={`inline-flex items-center gap-1.5 px-3 py-2 rounded text-sm font-sans font-medium transition-colors ${
+                      isActive
+                        ? 'bg-amber-500 text-white'
+                        : 'bg-amber-400/20 text-amber-200 hover:bg-amber-400/30 hover:text-white border border-amber-400/40'
+                    }`}
+                  >
+                    <AlertTriangle size={13} />
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            }
+            if (link.staff) {
+              return (
+                <li key={link.path}>
+                  <Link
+                    to={link.path}
+                    className={`inline-flex items-center gap-1.5 px-3 py-2 rounded text-sm font-sans font-medium transition-colors ${
+                      isActive
+                        ? 'bg-forest-400 text-white'
+                        : 'bg-forest-600/60 text-slate-200 hover:bg-forest-500 hover:text-white border border-forest-400/40'
+                    }`}
+                  >
+                    <Building2 size={13} />
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            }
             return (
               <li key={link.path}>
                 <Link
@@ -111,6 +148,42 @@ export default function Navigation() {
           <ul className="flex flex-col gap-1 pt-2">
             {navLinks.map((link) => {
               const isActive = currentPath === link.path;
+              if (link.highlight) {
+                return (
+                  <li key={link.path}>
+                    <Link
+                      to={link.path}
+                      onClick={() => setMobileOpen(false)}
+                      className={`flex items-center gap-2 px-3 py-2 rounded text-sm font-sans font-medium transition-colors ${
+                        isActive
+                          ? 'bg-amber-500 text-white'
+                          : 'bg-amber-400/20 text-amber-200 hover:bg-amber-400/30 hover:text-white border border-amber-400/40'
+                      }`}
+                    >
+                      <AlertTriangle size={13} />
+                      {link.label}
+                    </Link>
+                  </li>
+                );
+              }
+              if (link.staff) {
+                return (
+                  <li key={link.path}>
+                    <Link
+                      to={link.path}
+                      onClick={() => setMobileOpen(false)}
+                      className={`flex items-center gap-2 px-3 py-2 rounded text-sm font-sans font-medium transition-colors ${
+                        isActive
+                          ? 'bg-forest-400 text-white'
+                          : 'bg-forest-600/60 text-slate-200 hover:bg-forest-500 hover:text-white border border-forest-400/40'
+                      }`}
+                    >
+                      <Building2 size={13} />
+                      {link.label}
+                    </Link>
+                  </li>
+                );
+              }
               return (
                 <li key={link.path}>
                   <Link

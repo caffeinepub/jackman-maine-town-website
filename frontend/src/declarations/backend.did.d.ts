@@ -22,6 +22,20 @@ export interface Message {
   'message' : string,
   'timestamp' : Time,
 }
+export interface ProblemReport {
+  'id' : bigint,
+  'reporterName' : string,
+  'problemType' : ProblemType,
+  'reporterContact' : string,
+  'locationDescription' : string,
+  'timestamp' : Time,
+  'detailedDescription' : string,
+}
+export type ProblemType = { 'other' : null } |
+  { 'waterSewer' : null } |
+  { 'roadDamage' : null } |
+  { 'pothole' : null } |
+  { 'streetlight' : null };
 export type Time = bigint;
 export interface UserProfile { 'name' : string }
 export type UserRole = { 'admin' : null } |
@@ -58,16 +72,22 @@ export interface _SERVICE {
   'addEvent' : ActorMethod<[string, Time, string], undefined>,
   'assignCallerUserRole' : ActorMethod<[Principal, UserRole], undefined>,
   'deleteEvent' : ActorMethod<[bigint], undefined>,
+  'deleteReport' : ActorMethod<[bigint], undefined>,
   'getCallerUserProfile' : ActorMethod<[], [] | [UserProfile]>,
   'getCallerUserRole' : ActorMethod<[], UserRole>,
   'getEvents' : ActorMethod<[], Array<Event>>,
   'getMessages' : ActorMethod<[], Array<Message>>,
+  'getReports' : ActorMethod<[], Array<ProblemReport>>,
   'getTownAddress' : ActorMethod<[], string>,
   'getTownPhoneNumber' : ActorMethod<[], string>,
   'getUserProfile' : ActorMethod<[Principal], [] | [UserProfile]>,
   'isCallerAdmin' : ActorMethod<[], boolean>,
   'saveCallerUserProfile' : ActorMethod<[UserProfile], undefined>,
   'submitMessage' : ActorMethod<[string, string, string], undefined>,
+  'submitProblemReport' : ActorMethod<
+    [ProblemType, string, string, string, string],
+    bigint
+  >,
 }
 export declare const idlService: IDL.ServiceClass;
 export declare const idlInitArgs: IDL.Type[];

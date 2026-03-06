@@ -110,6 +110,61 @@ actor {
     messages.toArray();
   };
 
+  // Resident Problem Reports
+  public type ProblemType = {
+    #pothole;
+    #streetlight;
+    #waterSewer;
+    #roadDamage;
+    #other;
+  };
+
+  public type ProblemReport = {
+    id : Nat;
+    problemType : ProblemType;
+    locationDescription : Text;
+    detailedDescription : Text;
+    reporterName : Text;
+    reporterContact : Text;
+    timestamp : Time.Time;
+  };
+
+  var nextReportId : Nat = 0;
+  let reportsList = List.empty<ProblemReport>();
+
+  public shared ({ caller }) func submitProblemReport(problemType : ProblemType, locationDescription : Text, detailedDescription : Text, reporterName : Text, reporterContact : Text) : async Nat {
+    let report : ProblemReport = {
+      id = nextReportId;
+      problemType;
+      locationDescription;
+      detailedDescription;
+      reporterName;
+      reporterContact;
+      timestamp = Time.now();
+    };
+    reportsList.add(report);
+    nextReportId += 1;
+    report.id;
+  };
+
+  public query ({ caller }) func getReports() : async [ProblemReport] {
+    if (not AccessControl.hasPermission(accessControlState, caller, #admin)) {
+      Runtime.trap("Unauthorized: Only admins can view reports");
+    };
+    reportsList.toArray();
+  };
+
+  public shared ({ caller }) func deleteReport(id : Nat) : async () {
+    if (not AccessControl.hasPermission(accessControlState, caller, #admin)) {
+      Runtime.trap("Unauthorized: Only admins can delete reports");
+    };
+    let filteredArray = reportsList.toArray().filter(func(r) { r.id != id });
+    reportsList.clear();
+    for (report in filteredArray.values()) {
+      reportsList.add(report);
+    };
+  };
+
   public shared query func getTownAddress() : async Text {
     "123 Main Street, Jackman, ME 04945";
   };

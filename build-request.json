@@ -1,38 +1,76 @@
 {
   "kind": "build_request",
-  "title": "Add hunting & fishing highlight to homepage",
+  "title": "Add Town Office Staff Dashboard for Viewing Problem Reports",
   "projectName": "Jackman Maine Town Site",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-11",
-      "text": "Update the HomePage (frontend/src/pages/HomePage.tsx) to prominently highlight that Jackman, Maine is renowned for hunting and fishing. Add a dedicated callout section or prominent badge/banner in the hero area or quick-highlights zone that reads something like 'World-Class Hunting & Fishing Destination' with a short supporting line (e.g., 'Jackman is celebrated for trophy deer, moose, and bear hunting and some of Maine's finest fishing on the Moose River and area lakes'). The treatment should be visually prominent, consistent with the existing Northern Maine wilderness theme (deep forest greens, amber accents), and link to the Recreation & Outdoors page.",
+      "id": "REQ-21",
+      "text": "Create a new `TownOfficeDashboardPage` at `frontend/src/pages/TownOfficeDashboardPage.tsx` that is accessible only to authenticated admin/staff users (following the same `useIsAdmin` pattern used in `ReportProblemPage.tsx` and `EventsPage.tsx`). The page should display all submitted problem reports fetched via the existing `useGetProblemReports` React Query hook. Each report card must show: problem type, location description, detailed description, reporter name, reporter contact info (email/phone), and submission date. Include a delete button on each card for admins. If the user is not authenticated as admin, show a message indicating that access is restricted to town office staff. Style the page consistently with the existing Northern Maine wilderness theme (forest greens, slate grays, amber accents) using the same card/section layout patterns found in `ServicesPage.tsx` and `ReportProblemPage.tsx`. Include a prominent page heading such as 'Town Office — Problem Reports Dashboard'.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-6"
+          "msg-4"
         ],
         "quotes": [
-          "Put on the main page of the website that is known for hunting and fishing."
+          "make a page on the site for the town office members can see what people have reorted"
         ]
       },
       "acceptanceCriteria": [
-        "The homepage displays a clearly visible section or callout stating Jackman is known for hunting and fishing.",
-        "The callout includes a brief descriptive line referencing hunting and fishing opportunities in the area.",
-        "The element links to the Recreation & Outdoors page.",
-        "Styling is consistent with the existing Northern Maine wilderness theme (forest greens, amber/wood-tone accents).",
-        "The addition does not break existing homepage layout or navigation."
+        "A new page exists at `frontend/src/pages/TownOfficeDashboardPage.tsx`.",
+        "The page fetches and displays all submitted problem reports using the existing `useGetProblemReports` hook.",
+        "Each report card shows problem type, location, description, reporter name, reporter contact info, and submission date.",
+        "Admin users can delete individual reports from this page.",
+        "Non-admin or unauthenticated users see a restricted-access message instead of the reports.",
+        "The page is styled consistently with the existing Northern Maine wilderness theme."
+      ]
+    },
+    {
+      "id": "REQ-22",
+      "text": "Register the `TownOfficeDashboardPage` as a route in `frontend/src/App.tsx` at path `/town-office/reports`, following the same route definition pattern used for existing pages.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "make a page on the site for the town office members can see what people have reorted"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navigating to `/town-office/reports` renders the `TownOfficeDashboardPage` component.",
+        "The route is registered in `frontend/src/App.tsx` using the same pattern as other existing routes."
+      ]
+    },
+    {
+      "id": "REQ-23",
+      "text": "Add a 'Town Office Dashboard' link to both the desktop and mobile menus in `frontend/src/components/Navigation.tsx`, and add it to the quick links in `frontend/src/components/Footer.tsx`. The link should point to `/town-office/reports` and be labeled 'Town Office Dashboard' (or 'Staff Dashboard'). Follow the same link patterns used for existing pages. Optionally, only display this link when the user is authenticated as an admin.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "make a page on the site for the town office members can see what people have reorted"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A 'Town Office Dashboard' (or 'Staff Dashboard') link appears in both the desktop and mobile navigation menus.",
+        "A corresponding quick link is added to the Footer.",
+        "All links point to `/town-office/reports`.",
+        "Link patterns are consistent with existing navigation items."
       ]
     }
   ],
   "constraints": [
-    "Do not modify files under frontend/src/hooks/ or frontend/src/components/ui/.",
-    "Do not alter the backend schema or add new backend endpoints."
+    "Reuse the existing `useGetProblemReports` and `useDeleteProblemReport` React Query hooks — do not create new backend endpoints.",
+    "Access control must follow the same `useIsAdmin` pattern used in `ReportProblemPage.tsx` and `EventsPage.tsx`.",
+    "Do not modify any files listed under frontend.immutablePaths."
   ],
   "nonGoals": [
-    "Adding new backend data for hunting/fishing content.",
-    "Changing the Recreation & Outdoors page content (already updated in a prior version).",
-    "Redesigning the overall homepage layout."
+    "Creating new backend data models or API endpoints for this feature.",
+    "Adding report status/resolution tracking (not requested).",
+    "Modifying the existing public-facing `ReportProblemPage.tsx`."
   ],
   "imageRequirements": {
     "required": [],

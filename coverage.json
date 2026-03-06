@@ -1,24 +1,48 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-27T23:11:35.804Z",
+  "generatedAt": "2026-03-01T15:35:09.431Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 1,
-    "implemented": 1,
+    "total": 3,
+    "implemented": 3,
     "items": [
       {
-        "id": "REQ-11",
-        "summary": "Update the HomePage (frontend/src/pages/HomePage.tsx) to prominently highlight that Jackman, Maine is renowned for hunting and fishing. Add a dedicated callout section or prominent badge/banner in the hero area or quick-highlights zone that reads something like 'World-Class Hunting & Fishing Destination' with a short supporting line (e.g., 'Jackman is celebrated for trophy deer, moose, and bear hunting and some of Maine's finest fishing on the Moose River and area lakes'). The treatment should be visually prominent, consistent with the existing Northern Maine wilderness theme (deep forest greens, amber accents), and link to the Recreation & Outdoors page.",
+        "id": "REQ-21",
+        "summary": "Create a new `TownOfficeDashboardPage` at `frontend/src/pages/TownOfficeDashboardPage.tsx` that is accessible only to authenticated admin/staff users (following the same `useIsAdmin` pattern used in `ReportProblemPage.tsx` and `EventsPage.tsx`). The page should display all submitted problem reports fetched via the existing `useGetProblemReports` React Query hook. Each report card must show: problem type, location description, detailed description, reporter name, reporter contact info (email/phone), and submission date. Include a delete button on each card for admins. If the user is not authenticated as admin, show a message indicating that access is restricted to town office staff. Style the page consistently with the existing Northern Maine wilderness theme (forest greens, slate grays, amber accents) using the same card/section layout patterns found in `ServicesPage.tsx` and `ReportProblemPage.tsx`. Include a prominent page heading such as 'Town Office — Problem Reports Dashboard'.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/pages/HomePage.tsx"
+          "frontend/src/pages/TownOfficeDashboardPage.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/pages/HomePage.tsx"
+          "frontend/src/pages/TownOfficeDashboardPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-22",
+        "summary": "Register the `TownOfficeDashboardPage` as a route in `frontend/src/App.tsx` at path `/town-office/reports`, following the same route definition pattern used for existing pages.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-23",
+        "summary": "Add a 'Town Office Dashboard' link to both the desktop and mobile menus in `frontend/src/components/Navigation.tsx`, and add it to the quick links in `frontend/src/components/Footer.tsx`. The link should point to `/town-office/reports` and be labeled 'Town Office Dashboard' (or 'Staff Dashboard'). Follow the same link patterns used for existing pages. Optionally, only display this link when the user is authenticated as an admin.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/Navigation.tsx",
+          "frontend/src/components/Footer.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/Navigation.tsx",
+          "frontend/src/components/Footer.tsx"
         ]
       }
     ]
@@ -28,7 +52,10 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/App.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/Navigation.tsx",
+    "frontend/src/pages/TownOfficeDashboardPage.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

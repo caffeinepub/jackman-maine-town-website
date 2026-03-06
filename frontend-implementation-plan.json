@@ -1,23 +1,61 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Add hunting & fishing highlight to homepage",
+  "title": "Add Town Office Staff Dashboard for Viewing Problem Reports",
   "requirements": [
     {
-      "id": "REQ-11",
-      "summary": "Add a prominent hunting and fishing callout section to the HomePage hero area that highlights Jackman, Maine as a world-class hunting and fishing destination, styled with the Northern Maine wilderness theme and linking to the Recreation & Outdoors page.",
+      "id": "REQ-21",
+      "summary": "Create TownOfficeDashboardPage to display all submitted problem reports with admin-only access",
       "acceptanceCriteria": [
-        "The homepage displays a clearly visible section or callout stating Jackman is known for hunting and fishing.",
-        "The callout includes a brief descriptive line referencing hunting and fishing opportunities in the area.",
-        "The element links to the Recreation & Outdoors page.",
-        "Styling is consistent with the existing Northern Maine wilderness theme (forest greens, amber/wood-tone accents).",
-        "The addition does not break existing homepage layout or navigation."
+        "A new page exists at `frontend/src/pages/TownOfficeDashboardPage.tsx`.",
+        "The page fetches and displays all submitted problem reports using the existing `useGetProblemReports` hook.",
+        "Each report card shows problem type, location, description, reporter name, reporter contact info, and submission date.",
+        "Admin users can delete individual reports from this page.",
+        "Non-admin or unauthenticated users see a restricted-access message instead of the reports.",
+        "The page is styled consistently with the existing Northern Maine wilderness theme."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/pages/HomePage.tsx",
+          "path": "frontend/src/pages/TownOfficeDashboardPage.tsx",
+          "operation": "create",
+          "description": "Create a new admin-only dashboard page that displays all problem reports fetched via the existing useGetProblemReports hook. Use the useIsAdmin hook (following the pattern in ReportProblemPage.tsx and EventsPage.tsx) to check admin status. If not admin, display a restricted-access message. For admin users, render a list of report cards showing: problem type (mapped from enum to human-readable text), location description, detailed description, reporter name, reporter contact info, and submission date (formatted from Time). Include a delete button on each card that calls the useDeleteProblemReport mutation. Style the page with the Northern Maine wilderness theme using forest greens, slate grays, and amber accents, following the card/section layout patterns from ServicesPage.tsx and ReportProblemPage.tsx. Add a prominent heading 'Town Office — Problem Reports Dashboard'. Handle loading and error states appropriately."
+        }
+      ]
+    },
+    {
+      "id": "REQ-22",
+      "summary": "Register TownOfficeDashboardPage route in App.tsx",
+      "acceptanceCriteria": [
+        "Navigating to `/town-office/reports` renders the `TownOfficeDashboardPage` component.",
+        "The route is registered in `frontend/src/App.tsx` using the same pattern as other existing routes."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Add a dedicated hunting and fishing callout section within the hero area or immediately after it. The callout should include a prominent heading such as 'World-Class Hunting & Fishing Destination' and a supporting description mentioning trophy deer, moose, bear hunting, and fishing on the Moose River and area lakes. Style the section with forest green background (bg-forest-800 or bg-forest-900), amber accent borders or highlights, and ensure it is visually distinct. Include a Link component that navigates to '/recreation' (the Recreation & Outdoors page). Position this callout prominently so it's immediately visible on page load, either as a banner within the hero section or as the first content block after the hero."
+          "description": "Import TownOfficeDashboardPage from './pages/TownOfficeDashboardPage'. Add a new route definition at path '/town-office/reports' that renders TownOfficeDashboardPage, following the exact same Route pattern used for existing pages like EventsPage, ServicesPage, and ReportProblemPage (wrapped in the shared Layout with Navigation and Footer)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-23",
+      "summary": "Add Town Office Dashboard navigation links to Navigation.tsx and Footer.tsx",
+      "acceptanceCriteria": [
+        "A 'Town Office Dashboard' (or 'Staff Dashboard') link appears in both the desktop and mobile navigation menus.",
+        "A corresponding quick link is added to the Footer.",
+        "All links point to `/town-office/reports`.",
+        "Link patterns are consistent with existing navigation items."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Navigation.tsx",
+          "operation": "modify",
+          "description": "Add a 'Town Office Dashboard' link to both the desktop menu (in the flex container with other navigation links) and the mobile menu (in the mobile drawer navigation list). The link should point to '/town-office/reports' and follow the same styling pattern as existing navigation links. Optionally, conditionally render this link only when the user is authenticated as admin by using the useIsAdmin hook (if this pattern is already present in Navigation.tsx for other admin-only links, follow it; otherwise render unconditionally)."
+        },
+        {
+          "path": "frontend/src/components/Footer.tsx",
+          "operation": "modify",
+          "description": "Add a 'Town Office Dashboard' quick link to the footer's quick links section, placing it alongside existing quick links like 'Local Businesses' and 'Report a Problem'. The link should point to '/town-office/reports' and follow the same styling and layout pattern as other footer quick links."
         }
       ]
     }

@@ -89,7 +89,20 @@ export class ExternalBlob {
         return this;
     }
 }
+export interface _CaffeineStorageRefillResult {
+    success?: boolean;
+    topped_up_amount?: bigint;
+}
 export type Time = bigint;
+export interface ProblemReport {
+    id: bigint;
+    reporterName: string;
+    problemType: ProblemType;
+    reporterContact: string;
+    locationDescription: string;
+    timestamp: Time;
+    detailedDescription: string;
+}
 export interface _CaffeineStorageRefillInformation {
     proposed_top_up_amount?: bigint;
 }
@@ -112,9 +125,12 @@ export interface _CaffeineStorageCreateCertificateResult {
 export interface UserProfile {
     name: string;
 }
-export interface _CaffeineStorageRefillResult {
-    success?: boolean;
-    topped_up_amount?: bigint;
+export enum ProblemType {
+    other = "other",
+    waterSewer = "waterSewer",
+    roadDamage = "roadDamage",
+    pothole = "pothole",
+    streetlight = "streetlight"
 }
 export enum UserRole {
     admin = "admin",
@@ -132,18 +148,21 @@ export interface backendInterface {
     addEvent(title: string, date: Time, description: string): Promise<void>;
     assignCallerUserRole(user: Principal, role: UserRole): Promise<void>;
     deleteEvent(id: bigint): Promise<void>;
+    deleteReport(id: bigint): Promise<void>;
     getCallerUserProfile(): Promise<UserProfile | null>;
     getCallerUserRole(): Promise<UserRole>;
     getEvents(): Promise<Array<Event>>;
     getMessages(): Promise<Array<Message>>;
+    getReports(): Promise<Array<ProblemReport>>;
     getTownAddress(): Promise<string>;
     getTownPhoneNumber(): Promise<string>;
     getUserProfile(user: Principal): Promise<UserProfile | null>;
     isCallerAdmin(): Promise<boolean>;
     saveCallerUserProfile(profile: UserProfile): Promise<void>;
     submitMessage(name: string, email: string, message: string): Promise<void>;
+    submitProblemReport(problemType: ProblemType, locationDescription: string, detailedDescription: string, reporterName: string, reporterContact: string): Promise<bigint>;
 }
-import type { UserProfile as _UserProfile, UserRole as _UserRole, _CaffeineStorageRefillInformation as __CaffeineStorageRefillInformation, _CaffeineStorageRefillResult as __CaffeineStorageRefillResult } from "./declarations/backend.did.d.ts";
+import type { ProblemReport as _ProblemReport, ProblemType as _ProblemType, Time as _Time, UserProfile as _UserProfile, UserRole as _UserRole, _CaffeineStorageRefillInformation as __CaffeineStorageRefillInformation, _CaffeineStorageRefillResult as __CaffeineStorageRefillResult } from "./declarations/backend.did.d.ts";
 export class Backend implements backendInterface {
     constructor(private actor: ActorSubclass<_SERVICE>, private _uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, private _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, private processError?: (error: unknown) => never){}
     async _caffeineStorageBlobIsLive(arg0: Uint8Array): Promise<boolean> {
@@ -286,6 +305,20 @@ export class Backend implements backendInterface {
             return result;
         }
     }
+    async deleteReport(arg0: bigint): Promise<void> {
+        if (this.processError) {
+            try {
+                const result = await this.actor.deleteReport(arg0);
+                return result;
+            } catch (e) {
+                this.processError(e);
+                throw new Error("unreachable");
+            }
+        } else {
+            const result = await this.actor.deleteReport(arg0);
+            return result;
+        }
+    }
     async getCallerUserProfile(): Promise<UserProfile | null> {
         if (this.processError) {
             try {
@@ -340,6 +373,20 @@ export class Backend implements backendInterface {
         } else {
             const result = await this.actor.getMessages();
             return result;
+        }
+    }
+    async getReports(): Promise<Array<ProblemReport>> {
+        if (this.processError) {
+            try {
+                const result = await this.actor.getReports();
+                return from_candid_vec_n13(this._uploadFile, this._downloadFile, result);
+            } catch (e) {
+                this.processError(e);
+                throw new Error("unreachable");
+            }
+        } else {
+            const result = await this.actor.getReports();
+            return from_candid_vec_n13(this._uploadFile, this._downloadFile, result);
         }
     }
     async getTownAddress(): Promise<string> {
@@ -426,6 +473,26 @@ export class Backend implements backendInterface {
             return result;
         }
     }
+    async submitProblemReport(arg0: ProblemType, arg1: string, arg2: string, arg3: string, arg4: string): Promise<bigint> {
+        if (this.processError) {
+            try {
+                const result = await this.actor.submitProblemReport(to_candid_ProblemType_n18(this._uploadFile, this._downloadFile, arg0), arg1, arg2, arg3, arg4);
+                return result;
+            } catch (e) {
+                this.processError(e);
+                throw new Error("unreachable");
+            }
+        } else {
+            const result = await this.actor.submitProblemReport(to_candid_ProblemType_n18(this._uploadFile, this._downloadFile, arg0), arg1, arg2, arg3, arg4);
+            return result;
+        }
+    }
+}
+function from_candid_ProblemReport_n14(_uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, value: _ProblemReport): ProblemReport {
+    return from_candid_record_n15(_uploadFile, _downloadFile, value);
+}
+function from_candid_ProblemType_n16(_uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, value: _ProblemType): ProblemType {
+    return from_candid_variant_n17(_uploadFile, _downloadFile, value);
 }
 function from_candid_UserRole_n11(_uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, value: _UserRole): UserRole {
     return from_candid_variant_n12(_uploadFile, _downloadFile, value);
@@ -441,6 +508,33 @@ function from_candid_opt_n6(_uploadFile: (file: ExternalBlob) => Promise<Uint8Ar
 }
 function from_candid_opt_n7(_uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, value: [] | [bigint]): bigint | null {
     return value.length === 0 ? null : value[0];
+}
+function from_candid_record_n15(_uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, value: {
+    id: bigint;
+    reporterName: string;
+    problemType: _ProblemType;
+    reporterContact: string;
+    locationDescription: string;
+    timestamp: _Time;
+    detailedDescription: string;
+}): {
+    id: bigint;
+    reporterName: string;
+    problemType: ProblemType;
+    reporterContact: string;
+    locationDescription: string;
+    timestamp: Time;
+    detailedDescription: string;
+} {
+    return {
+        id: value.id,
+        reporterName: value.reporterName,
+        problemType: from_candid_ProblemType_n16(_uploadFile, _downloadFile, value.problemType),
+        reporterContact: value.reporterContact,
+        locationDescription: value.locationDescription,
+        timestamp: value.timestamp,
+        detailedDescription: value.detailedDescription
+    };
 }
 function from_candid_record_n5(_uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, value: {
     success: [] | [boolean];
@@ -463,6 +557,25 @@ function from_candid_variant_n12(_uploadFile: (file: ExternalBlob) => Promise<Ui
 }): UserRole {
     return "admin" in value ? UserRole.admin : "user" in value ? UserRole.user : "guest" in value ? UserRole.guest : value;
 }
+function from_candid_variant_n17(_uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, value: {
+    other: null;
+} | {
+    waterSewer: null;
+} | {
+    roadDamage: null;
+} | {
+    pothole: null;
+} | {
+    streetlight: null;
+}): ProblemType {
+    return "other" in value ? ProblemType.other : "waterSewer" in value ? ProblemType.waterSewer : "roadDamage" in value ? ProblemType.roadDamage : "pothole" in value ? ProblemType.pothole : "streetlight" in value ? ProblemType.streetlight : value;
+}
+function from_candid_vec_n13(_uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, value: Array<_ProblemReport>): Array<ProblemReport> {
+    return value.map((x)=>from_candid_ProblemReport_n14(_uploadFile, _downloadFile, x));
+}
+function to_candid_ProblemType_n18(_uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, value: ProblemType): _ProblemType {
+    return to_candid_variant_n19(_uploadFile, _downloadFile, value);
+}
 function to_candid_UserRole_n8(_uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, value: UserRole): _UserRole {
     return to_candid_variant_n9(_uploadFile, _downloadFile, value);
 }
@@ -480,6 +593,29 @@ function to_candid_record_n3(_uploadFile: (file: ExternalBlob) => Promise<Uint8A
     return {
         proposed_top_up_amount: value.proposed_top_up_amount ? candid_some(value.proposed_top_up_amount) : candid_none()
     };
+}
+function to_candid_variant_n19(_uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, value: ProblemType): {
+    other: null;
+} | {
+    waterSewer: null;
+} | {
+    roadDamage: null;
+} | {
+    pothole: null;
+} | {
+    streetlight: null;
+} {
+    return value == ProblemType.other ? {
+        other: null
+    } : value == ProblemType.waterSewer ? {
+        waterSewer: null
+    } : value == ProblemType.roadDamage ? {
+        roadDamage: null
+    } : value == ProblemType.pothole ? {
+        pothole: null
+    } : value == ProblemType.streetlight ? {
+        streetlight: null
+    } : value;
 }
 function to_candid_variant_n9(_uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, value: UserRole): {
     admin: null;

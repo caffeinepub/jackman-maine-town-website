@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 9,
+  "projectStateVersion": 17,
   "summary": "A town website for Jackman, Maine (ZIP: 04945). The site will serve as an informational hub for the town.",
   "architectural_notes": [
     "Town: Jackman, Maine | ZIP: 04945"
@@ -95,6 +95,94 @@
         "REQ-11"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-add-react-query-hooks-in-frontend-src-hooks-usequeries-ts-for-submitting-a-problem-report-usesubmitproblemreport-mutation-and-fetching-all-reports-usegetproblemreports-query-admin-only-following-the-same-patterns-used-for-events-and-contact-messages",
+      "title": "Add React Query hooks in `frontend/src/hooks/useQueries.ts` for submitting a problem report (`useSubmitProblemReport` mutation) and fetching all reports (`useGetProblemReports` query, admin only), following the same patterns used for events and contact messages.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-new-reportproblempage-at-frontend-src-pages-reportproblempage-tsx-the-page-must-include-a-public-facing-form-with-fields-for-problem-type-dropdown-with-options-pothole-broken-streetlight-road-damage-water-sewer-issue-fallen-tree-debris-other-location-description-text-input-detailed-description-textarea-reporter-name-text-input-and-contact-info-email-or-phone-text-input-on-successful-submission-show-a-confirmation-message-admin-users-should-see-a-section-below-the-form-listing-all-submitted-reports-with-the-ability-to-delete-them-style-the-page-consistently-with-the-existing-northern-maine-wilderness-theme-forest-greens-slate-grays-amber-accents-using-the-same-card-section-layout-patterns-found-in-servicespage-tsx-and-contactpage-tsx",
+      "title": "Create a new `ReportProblemPage` at `frontend/src/pages/ReportProblemPage.tsx`. The page must include a public-facing form with fields for: problem type (dropdown with options: Pothole, Broken Streetlight, Road Damage, Water/Sewer Issue, Fallen Tree/Debris, Other), location description (text input), detailed description (textarea), reporter name (text input), and contact info (email or phone, text input). On successful submission, show a confirmation message. Admin users should see a section below the form listing all submitted reports with the ability to delete them. Style the page consistently with the existing Northern Maine wilderness theme (forest greens, slate grays, amber accents) using the same card/section layout patterns found in ServicesPage.tsx and ContactPage.tsx.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-register-the-reportproblempage-as-a-route-in-frontend-src-app-tsx-at-path-report-problem-following-the-same-route-definition-pattern-used-for-existing-pages",
+      "title": "Register the `ReportProblemPage` as a route in `frontend/src/App.tsx` at path `/report-problem`, following the same route definition pattern used for existing pages.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-report-a-problem-navigation-link-to-both-the-desktop-and-mobile-menus-in-frontend-src-components-navigation-tsx-and-add-it-to-the-quick-links-in-frontend-src-components-footer-tsx-following-the-same-link-patterns-used-for-existing-pages",
+      "title": "Add a 'Report a Problem' navigation link to both the desktop and mobile menus in `frontend/src/components/Navigation.tsx` and add it to the quick links in `frontend/src/components/Footer.tsx`, following the same link patterns used for existing pages.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-new-local-businesses-page-at-frontend-src-pages-localbusinessespage-tsx-that-displays-two-sections-1-stores-in-jackman-maine-listing-a-curated-set-of-representative-local-stores-e-g-general-store-hardware-sporting-goods-convenience-grocery-with-store-name-a-brief-description-and-placeholder-address-phone-and-2-hotels-lodging-in-jackman-maine-listing-a-curated-set-of-representative-local-hotels-and-lodges-e-g-inn-motel-sporting-camp-lodge-with-name-brief-description-and-placeholder-address-phone-style-the-page-consistently-with-the-existing-northern-maine-wilderness-theme-forest-greens-slate-grays-amber-accents-using-the-same-card-section-layout-patterns-found-in-servicespage-tsx",
+      "title": "Create a new 'Local Businesses' page at `frontend/src/pages/LocalBusinessesPage.tsx` that displays two sections: (1) 'Stores in Jackman, Maine' listing a curated set of representative local stores (e.g., general store, hardware/sporting goods, convenience/grocery) with store name, a brief description, and placeholder address/phone; and (2) 'Hotels & Lodging in Jackman, Maine' listing a curated set of representative local hotels and lodges (e.g., inn, motel, sporting camp/lodge) with name, brief description, and placeholder address/phone. Style the page consistently with the existing Northern Maine wilderness theme (forest greens, slate grays, amber accents) using the same card/section layout patterns found in ServicesPage.tsx.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-register-the-localbusinessespage-as-a-route-in-frontend-src-app-tsx-at-path-local-businesses-following-the-same-route-definition-pattern-used-for-existing-pages",
+      "title": "Register the `LocalBusinessesPage` as a route in `frontend/src/App.tsx` at path `/local-businesses`, following the same route definition pattern used for existing pages.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-local-businesses-navigation-link-to-both-the-desktop-and-mobile-menus-in-frontend-src-components-navigation-tsx-and-add-it-to-the-quick-links-in-frontend-src-components-footer-tsx-following-the-same-link-patterns-used-for-existing-pages-the-link-should-point-to-local-businesses-and-be-labeled-local-businesses-or-stores-hotels",
+      "title": "Add a 'Local Businesses' navigation link to both the desktop and mobile menus in `frontend/src/components/Navigation.tsx` and add it to the quick links in `frontend/src/components/Footer.tsx`, following the same link patterns used for existing pages. The link should point to `/local-businesses` and be labeled 'Local Businesses' (or 'Stores & Hotels').",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-admin-section-of-frontend-src-pages-reportproblempage-tsx-to-display-the-reporter-s-name-and-contact-info-email-phone-for-each-submitted-problem-report-each-report-card-in-the-admin-listing-should-clearly-show-the-reporter-s-name-and-contact-info-alongside-the-existing-report-details-problem-type-location-description-date",
+      "title": "Update the admin section of `frontend/src/pages/ReportProblemPage.tsx` to display the reporter's name and contact info (email/phone) for each submitted problem report. Each report card in the admin listing should clearly show the reporter's name and contact info alongside the existing report details (problem type, location, description, date).",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-new-townofficedashboardpage-at-frontend-src-pages-townofficedashboardpage-tsx-that-is-accessible-only-to-authenticated-admin-staff-users-following-the-same-useisadmin-pattern-used-in-reportproblempage-tsx-and-eventspage-tsx-the-page-should-display-all-submitted-problem-reports-fetched-via-the-existing-usegetproblemreports-react-query-hook-each-report-card-must-show-problem-type-location-description-detailed-description-reporter-name-reporter-contact-info-email-phone-and-submission-date-include-a-delete-button-on-each-card-for-admins-if-the-user-is-not-authenticated-as-admin-show-a-message-indicating-that-access-is-restricted-to-town-office-staff-style-the-page-consistently-with-the-existing-northern-maine-wilderness-theme-forest-greens-slate-grays-amber-accents-using-the-same-card-section-layout-patterns-found-in-servicespage-tsx-and-reportproblempage-tsx-include-a-prominent-page-heading-such-as-town-office-problem-reports-dashboard",
+      "title": "Create a new `TownOfficeDashboardPage` at `frontend/src/pages/TownOfficeDashboardPage.tsx` that is accessible only to authenticated admin/staff users (following the same `useIsAdmin` pattern used in `ReportProblemPage.tsx` and `EventsPage.tsx`). The page should display all submitted problem reports fetched via the existing `useGetProblemReports` React Query hook. Each report card must show: problem type, location description, detailed description, reporter name, reporter contact info (email/phone), and submission date. Include a delete button on each card for admins. If the user is not authenticated as admin, show a message indicating that access is restricted to town office staff. Style the page consistently with the existing Northern Maine wilderness theme (forest greens, slate grays, amber accents) using the same card/section layout patterns found in `ServicesPage.tsx` and `ReportProblemPage.tsx`. Include a prominent page heading such as 'Town Office — Problem Reports Dashboard'.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-register-the-townofficedashboardpage-as-a-route-in-frontend-src-app-tsx-at-path-town-office-reports-following-the-same-route-definition-pattern-used-for-existing-pages",
+      "title": "Register the `TownOfficeDashboardPage` as a route in `frontend/src/App.tsx` at path `/town-office/reports`, following the same route definition pattern used for existing pages.",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-town-office-dashboard-link-to-both-the-desktop-and-mobile-menus-in-frontend-src-components-navigation-tsx-and-add-it-to-the-quick-links-in-frontend-src-components-footer-tsx-the-link-should-point-to-town-office-reports-and-be-labeled-town-office-dashboard-or-staff-dashboard-follow-the-same-link-patterns-used-for-existing-pages-optionally-only-display-this-link-when-the-user-is-authenticated-as-an-admin",
+      "title": "Add a 'Town Office Dashboard' link to both the desktop and mobile menus in `frontend/src/components/Navigation.tsx`, and add it to the quick links in `frontend/src/components/Footer.tsx`. The link should point to `/town-office/reports` and be labeled 'Town Office Dashboard' (or 'Staff Dashboard'). Follow the same link patterns used for existing pages. Optionally, only display this link when the user is authenticated as an admin.",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -119,6 +207,38 @@
     {
       "id": "AR-4",
       "summary": "Add a highlight on the homepage that Jackman is known for hunting and fishing",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Add a 'Report a Problem' feature where residents can submit issues (e.g., potholes, broken lights, infrastructure problems) with fields for problem type, location, description, and contact info. Store submissions in the backend.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Add a backend data model and API for storing resident problem reports. Each report should include: problem type (e.g., pothole, broken streetlight, water/sewer, road damage, other), location description (text), detailed description, reporter's name, and reporter's contact info (email or phone). Expose functions to submit a new report (public) and to list/delete reports (admin only, following the existing role-based access control pattern used for events and messages in main.mo).",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Add a section listing some stores in Jackman, Maine and some hotels in Jackman, Maine to the site.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "On the admin page, display the reporter's name and contact info for each submitted problem report so admins can see who reported each problem.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Create a dedicated page for town office members (staff/admin) to view all submitted problem reports in one place, separate from the public Report a Problem page.",
       "reqIds": [],
       "status": "pending"
     }
